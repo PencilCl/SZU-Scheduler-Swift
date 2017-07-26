@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="66S-hL-G8T">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hK0-9s-Vpd">
                                     <size key="itemSize" width="135" height="128"/>
@@ -181,35 +181,24 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3y-h0-2aZ">
-                                <rect key="frame" x="119" y="472" width="136" height="42"/>
-                                <color key="backgroundColor" red="0.90980392156862744" green="0.30588235294117649" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="fXs-IW-fPv"/>
-                                    <constraint firstAttribute="height" constant="42" id="hxM-Kf-jZO"/>
-                                </constraints>
-                                <state key="normal" title="模块管理">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="XXD-af-vpr" kind="show" identifier="moduleControl" id="t6d-pB-1Ie"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="66S-hL-G8T" firstAttribute="centerX" secondItem="a3y-h0-2aZ" secondAttribute="centerX" id="dvV-hY-vt1"/>
-                            <constraint firstItem="U3k-ds-hqR" firstAttribute="top" secondItem="a3y-h0-2aZ" secondAttribute="bottom" constant="40" id="fnK-EX-qRS"/>
                             <constraint firstItem="66S-hL-G8T" firstAttribute="top" secondItem="vgh-8X-qO0" secondAttribute="bottom" id="k8P-XD-Sng"/>
                             <constraint firstAttribute="trailing" secondItem="66S-hL-G8T" secondAttribute="trailing" id="oeL-gf-D9g"/>
-                            <constraint firstItem="a3y-h0-2aZ" firstAttribute="top" secondItem="66S-hL-G8T" secondAttribute="bottom" constant="40" id="q4V-Ij-9Ia"/>
                             <constraint firstItem="66S-hL-G8T" firstAttribute="leading" secondItem="eLZ-m0-FuT" secondAttribute="leading" id="q7X-n0-23H"/>
+                            <constraint firstItem="U3k-ds-hqR" firstAttribute="top" secondItem="66S-hL-G8T" secondAttribute="bottom" id="rBh-21-5ZW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="荔荔在目" id="QbY-dG-JCz"/>
+                    <navigationItem key="navigationItem" title="荔荔在目" id="QbY-dG-JCz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Lb1-IF-yQP">
+                            <connections>
+                                <segue destination="XXD-af-vpr" kind="show" identifier="moduleControl" id="9mM-Ad-gNK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="moduleCollectionView" destination="66S-hL-G8T" id="CG8-gi-KIZ"/>
-                        <outlet property="moduleControlButton" destination="a3y-h0-2aZ" id="WFM-fk-twW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tbt-Qf-nbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,9 +233,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHF-yF-asF">
                                 <rect key="frame" x="187" y="0.0" width="188" height="40"/>
                                 <color key="backgroundColor" red="0.61176470588235299" green="0.80000000000000004" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="188" id="LEr-0A-7lM"/>
-                                </constraints>
                                 <state key="normal" title="科目列表">
                                     <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -275,8 +261,10 @@
                             <constraint firstItem="zHF-yF-asF" firstAttribute="baseline" secondItem="sK2-Qg-TOg" secondAttribute="firstBaseline" id="LfY-vg-Nsq"/>
                             <constraint firstItem="sK2-Qg-TOg" firstAttribute="top" secondItem="FTx-ka-dFp" secondAttribute="bottom" id="Nkq-LB-9Ni"/>
                             <constraint firstItem="0cS-9i-8Fn" firstAttribute="leading" secondItem="sK2-Qg-TOg" secondAttribute="leading" id="Tb4-d9-Sfb"/>
+                            <constraint firstItem="zHF-yF-asF" firstAttribute="width" secondItem="sK2-Qg-TOg" secondAttribute="width" id="X0Y-Hj-QI2"/>
                             <constraint firstItem="zHF-yF-asF" firstAttribute="firstBaseline" secondItem="sK2-Qg-TOg" secondAttribute="baseline" id="esN-sk-g8R"/>
                             <constraint firstAttribute="trailing" secondItem="2yc-jV-aHN" secondAttribute="trailing" id="hUQ-vO-0q1"/>
+                            <constraint firstItem="zHF-yF-asF" firstAttribute="height" secondItem="sK2-Qg-TOg" secondAttribute="height" id="mYg-Hq-uwo"/>
                             <constraint firstItem="YqY-pT-A0p" firstAttribute="top" secondItem="2yc-jV-aHN" secondAttribute="bottom" id="p76-X3-YGL"/>
                             <constraint firstItem="0cS-9i-8Fn" firstAttribute="bottom" secondItem="zHF-yF-asF" secondAttribute="bottom" id="pDS-fH-Fc3"/>
                             <constraint firstAttribute="trailing" secondItem="zHF-yF-asF" secondAttribute="trailing" id="rXd-it-7W7"/>
@@ -413,9 +401,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yI-aF-3oX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作业描述" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yI-aF-3oX">
                                         <rect key="frame" x="8" y="49" width="359" height="21"/>
-                                        <mutableString key="text">作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
