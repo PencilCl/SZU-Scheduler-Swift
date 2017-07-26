@@ -13,6 +13,7 @@ class ModuleControlViewController: UIViewController,
     UITableViewDataSource {
     
     var module: [Module]?
+    var lastNavigationBarColor: UIColor!
 
     @IBOutlet weak var moduleTableView: UITableView! {
         didSet {
@@ -25,6 +26,20 @@ class ModuleControlViewController: UIViewController,
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
+        
+        if let navigationBar = navigationController?.navigationBar {
+            lastNavigationBarColor = navigationBar.barTintColor
+            navigationBar.barTintColor = UIColor.rgbColorFromHex(rgb: 0xE84E40)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 恢复状态栏颜色
+        if let navigationBar = navigationController?.navigationBar {
+            navigationBar.barTintColor = lastNavigationBarColor
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

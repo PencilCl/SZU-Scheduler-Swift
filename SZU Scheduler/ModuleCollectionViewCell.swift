@@ -36,7 +36,7 @@ class ModuleCollectionViewCell: UICollectionViewCell {
     private func updateUI() {
         if let module = module {
             moduleNameButton.setTitle(module.name, for: .normal)
-            self.backgroundColor = module.color
+            moduleNameButton.backgroundColor = module.color
         }
     }
 }

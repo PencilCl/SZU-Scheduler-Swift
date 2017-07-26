@@ -17,6 +17,12 @@
 		977D8D0D1F13102D00862493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D0B1F13102D00862493 /* Main.storyboard */; };
 		977D8D0F1F13102D00862493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D0E1F13102D00862493 /* Assets.xcassets */; };
 		977D8D121F13102D00862493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D101F13102D00862493 /* LaunchScreen.storyboard */; };
+		97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF71F27945400059687 /* BlackboardViewController.swift */; };
+		97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF91F27A59900059687 /* HomeworkViewController.swift */; };
+		97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */; };
+		97EF30021F27A86000059687 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30011F27A86000059687 /* Homework.swift */; };
+		97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */; };
+		97EF30061F27B3C800059687 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30051F27B3C800059687 /* Subject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		977D8D0E1F13102D00862493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		977D8D111F13102D00862493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		977D8D131F13102D00862493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97EF2FF71F27945400059687 /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
+		97EF2FF91F27A59900059687 /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
+		97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
+		97EF30011F27A86000059687 /* Homework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
+		97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTableViewController.swift; sourceTree = "<group>"; };
+		97EF30051F27B3C800059687 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				9735CEAE1F25F2E500771566 /* Module.swift */,
+				97EF30011F27A86000059687 /* Homework.swift */,
+				97EF30051F27B3C800059687 /* Subject.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -72,14 +86,18 @@
 		977D8D061F13102D00862493 /* SZU Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */,
 				9735CEAD1F25F2BF00771566 /* Entity */,
 				977D8D191F1469A000862493 /* Support Files */,
 				977D8D091F13102D00862493 /* ViewController.swift */,
 				977D8D0B1F13102D00862493 /* Main.storyboard */,
+				97EF2FF91F27A59900059687 /* HomeworkViewController.swift */,
 				9735CEAB1F25F29C00771566 /* HomeViewController.swift */,
 				9735CEB01F25F9B700771566 /* ModuleCollectionViewCell.swift */,
 				9735CEB21F26206E00771566 /* ModuleControlViewController.swift */,
 				9735CEB41F2622AA00771566 /* ModuleControlTableViewCell.swift */,
+				97EF2FF71F27945400059687 /* BlackboardViewController.swift */,
+				97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */,
 			);
 			path = "SZU Scheduler";
 			sourceTree = "<group>";
@@ -168,11 +186,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */,
+				97EF30061F27B3C800059687 /* Subject.swift in Sources */,
 				9735CEB51F2622AA00771566 /* ModuleControlTableViewCell.swift in Sources */,
 				977D8D0A1F13102D00862493 /* ViewController.swift in Sources */,
 				9735CEB11F25F9B700771566 /* ModuleCollectionViewCell.swift in Sources */,
+				97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */,
 				9735CEB31F26206E00771566 /* ModuleControlViewController.swift in Sources */,
 				977D8D081F13102D00862493 /* AppDelegate.swift in Sources */,
+				97EF30021F27A86000059687 /* Homework.swift in Sources */,
+				97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */,
+				97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */,
 				9735CEAF1F25F2E500771566 /* Module.swift in Sources */,
 				9735CEAC1F25F29C00771566 /* HomeViewController.swift in Sources */,
 			);

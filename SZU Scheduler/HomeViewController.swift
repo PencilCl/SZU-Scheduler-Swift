@@ -32,6 +32,17 @@ class HomeViewController: UIViewController,
         moduleCollectionView.dataSource = self
         
         navigationController?.navigationBar.tintColor = UIColor.white
+        
+        // 设置导航栏返回按钮文本为“返回”
+        let item = UIBarButtonItem(title: "返回", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item;
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.showHireLine()
+        navigationController?.navigationBar.barTintColor = UIColor.rgbColorFromHex(rgb: 0x5677FC)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -63,9 +74,14 @@ class HomeViewController: UIViewController,
     }
     
     func click(on item: Module?) {
-        if let module = item {
-            print(module.name)
-        }
+//        if let module = item {
+//            switch module.name {
+//            case "Blackboard":
+//                performSegue(withIdentifier: "blackboard", sender: nil)
+//            default:
+//                break
+//            }
+//        }
     }
     
     @IBOutlet weak var moduleControlButton: UIButton! {
@@ -78,7 +94,6 @@ class HomeViewController: UIViewController,
         if let identifier = segue.identifier,
             identifier == "moduleControl" {
             let moduleControlVC = segue.destination as! ModuleControlViewController
-            
             moduleControlVC.module = moduleList
         }
     }
