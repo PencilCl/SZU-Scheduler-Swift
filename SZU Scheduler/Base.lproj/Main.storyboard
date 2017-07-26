@@ -219,7 +219,7 @@
         <!--Blackboard-->
         <scene sceneID="qb4-dd-dQf">
             <objects>
-                <viewController title="Blackboard" id="QK8-7H-0eL" customClass="BlackboardViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Blackboard" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="QK8-7H-0eL" customClass="BlackboardViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FTx-ka-dFp"/>
                         <viewControllerLayoutGuide type="bottom" id="YqY-pT-A0p"/>
@@ -261,7 +261,7 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cS-9i-8Fn">
-                                <rect key="frame" x="0.0" y="40" width="188" height="2"/>
+                                <rect key="frame" x="0.0" y="38" width="188" height="2"/>
                                 <color key="backgroundColor" red="0.55969859439781455" green="0.69293755171867799" blue="0.40050101284177742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -273,14 +273,14 @@
                             <constraint firstItem="0cS-9i-8Fn" firstAttribute="width" secondItem="zHF-yF-asF" secondAttribute="width" id="Dig-7G-3W9"/>
                             <constraint firstItem="2yc-jV-aHN" firstAttribute="leading" secondItem="7w0-0A-xNL" secondAttribute="leading" id="EEs-nw-F4W"/>
                             <constraint firstItem="zHF-yF-asF" firstAttribute="baseline" secondItem="sK2-Qg-TOg" secondAttribute="firstBaseline" id="LfY-vg-Nsq"/>
-                            <constraint firstItem="YqY-pT-A0p" firstAttribute="top" secondItem="0cS-9i-8Fn" secondAttribute="bottom" constant="512" id="N4E-oT-UYY"/>
                             <constraint firstItem="sK2-Qg-TOg" firstAttribute="top" secondItem="FTx-ka-dFp" secondAttribute="bottom" id="Nkq-LB-9Ni"/>
                             <constraint firstItem="0cS-9i-8Fn" firstAttribute="leading" secondItem="sK2-Qg-TOg" secondAttribute="leading" id="Tb4-d9-Sfb"/>
                             <constraint firstItem="zHF-yF-asF" firstAttribute="firstBaseline" secondItem="sK2-Qg-TOg" secondAttribute="baseline" id="esN-sk-g8R"/>
                             <constraint firstAttribute="trailing" secondItem="2yc-jV-aHN" secondAttribute="trailing" id="hUQ-vO-0q1"/>
                             <constraint firstItem="YqY-pT-A0p" firstAttribute="top" secondItem="2yc-jV-aHN" secondAttribute="bottom" id="p76-X3-YGL"/>
+                            <constraint firstItem="0cS-9i-8Fn" firstAttribute="bottom" secondItem="zHF-yF-asF" secondAttribute="bottom" id="pDS-fH-Fc3"/>
                             <constraint firstAttribute="trailing" secondItem="zHF-yF-asF" secondAttribute="trailing" id="rXd-it-7W7"/>
-                            <constraint firstItem="0cS-9i-8Fn" firstAttribute="top" secondItem="2yc-jV-aHN" secondAttribute="top" id="rux-LX-S3b"/>
+                            <constraint firstItem="0cS-9i-8Fn" firstAttribute="top" secondItem="zHF-yF-asF" secondAttribute="bottom" constant="-2" id="sVo-dt-eHp"/>
                             <constraint firstItem="2yc-jV-aHN" firstAttribute="top" secondItem="zHF-yF-asF" secondAttribute="bottom" id="yRf-d7-vyf"/>
                         </constraints>
                     </view>
@@ -322,11 +322,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="55B-Z1-bLu" id="sfo-oR-8X4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作业名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgx-Iw-qEM">
-                                                    <rect key="frame" x="18" y="8" width="641" height="28"/>
+                                                    <rect key="frame" x="18" y="8" width="349" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="l9v-nv-sjJ"/>
                                                     </constraints>
@@ -335,13 +335,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="科目名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQL-ys-GTW">
-                                                    <rect key="frame" x="18" y="34" width="641" height="21"/>
+                                                    <rect key="frame" x="18" y="34" width="349" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="截止日期" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fu-8n-Y1k">
-                                                    <rect key="frame" x="18" y="57" width="641" height="21"/>
+                                                    <rect key="frame" x="18" y="57" width="349" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="7xk-ng-etq"/>
                                                     </constraints>
@@ -392,7 +392,7 @@
         <!--作业详情-->
         <scene sceneID="gnX-LF-bZY">
             <objects>
-                <viewController title="作业详情" id="9Hz-xr-7ll" sceneMemberID="viewController">
+                <viewController title="作业详情" automaticallyAdjustsScrollViewInsets="NO" id="9Hz-xr-7ll" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eIs-tH-aOO"/>
                         <viewControllerLayoutGuide type="bottom" id="laG-5C-Mf8"/>
@@ -413,8 +413,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作业描述" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yI-aF-3oX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yI-aF-3oX">
                                         <rect key="frame" x="8" y="49" width="359" height="21"/>
+                                        <mutableString key="text">作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述作业描述</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -484,7 +485,7 @@
         <!--模块管理-->
         <scene sceneID="DHx-LH-lPU">
             <objects>
-                <viewController title="模块管理" id="XXD-af-vpr" customClass="ModuleControlViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="模块管理" hidesBottomBarWhenPushed="YES" id="XXD-af-vpr" customClass="ModuleControlViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1FV-P8-F7y"/>
                         <viewControllerLayoutGuide type="bottom" id="Idf-FM-z1f"/>
@@ -501,7 +502,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cGw-Ap-icV" id="TqH-SH-dH1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOY-h0-rWk">

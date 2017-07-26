@@ -23,6 +23,7 @@
 		97EF30021F27A86000059687 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30011F27A86000059687 /* Homework.swift */; };
 		97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */; };
 		97EF30061F27B3C800059687 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30051F27B3C800059687 /* Subject.swift */; };
+		97EF300E1F28F80000059687 /* HomeworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF300D1F28F80000059687 /* HomeworkDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		97EF30011F27A86000059687 /* Homework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
 		97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTableViewController.swift; sourceTree = "<group>"; };
 		97EF30051F27B3C800059687 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		97EF300D1F28F80000059687 /* HomeworkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				9735CEB41F2622AA00771566 /* ModuleControlTableViewCell.swift */,
 				97EF2FF71F27945400059687 /* BlackboardViewController.swift */,
 				97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */,
+				97EF300D1F28F80000059687 /* HomeworkDetailViewController.swift */,
 			);
 			path = "SZU Scheduler";
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				9735CEB11F25F9B700771566 /* ModuleCollectionViewCell.swift in Sources */,
 				97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */,
 				9735CEB31F26206E00771566 /* ModuleControlViewController.swift in Sources */,
+				97EF300E1F28F80000059687 /* HomeworkDetailViewController.swift in Sources */,
 				977D8D081F13102D00862493 /* AppDelegate.swift in Sources */,
 				97EF30021F27A86000059687 /* Homework.swift in Sources */,
 				97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */,
