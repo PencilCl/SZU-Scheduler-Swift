@@ -24,6 +24,10 @@
 		97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */; };
 		97EF30061F27B3C800059687 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30051F27B3C800059687 /* Subject.swift */; };
 		97EF300E1F28F80000059687 /* HomeworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF300D1F28F80000059687 /* HomeworkDetailViewController.swift */; };
+		97EF30101F29C49700059687 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF300F1F29C49700059687 /* LibraryViewController.swift */; };
+		97EF30121F29C4EC00059687 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30111F29C4EB00059687 /* BookTableViewCell.swift */; };
+		97EF30141F29C50200059687 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30131F29C50200059687 /* Book.swift */; };
+		97EF30161F29CEB800059687 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30151F29CEB800059687 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTableViewController.swift; sourceTree = "<group>"; };
 		97EF30051F27B3C800059687 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		97EF300D1F28F80000059687 /* HomeworkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkDetailViewController.swift; sourceTree = "<group>"; };
+		97EF300F1F29C49700059687 /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		97EF30111F29C4EB00059687 /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		97EF30131F29C50200059687 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		97EF30151F29CEB800059687 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,7 @@
 				9735CEAE1F25F2E500771566 /* Module.swift */,
 				97EF30011F27A86000059687 /* Homework.swift */,
 				97EF30051F27B3C800059687 /* Subject.swift */,
+				97EF30131F29C50200059687 /* Book.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -88,11 +97,11 @@
 		977D8D061F13102D00862493 /* SZU Scheduler */ = {
 			isa = PBXGroup;
 			children = (
-				97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */,
 				9735CEAD1F25F2BF00771566 /* Entity */,
 				977D8D191F1469A000862493 /* Support Files */,
 				977D8D091F13102D00862493 /* ViewController.swift */,
 				977D8D0B1F13102D00862493 /* Main.storyboard */,
+				97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */,
 				97EF2FF91F27A59900059687 /* HomeworkViewController.swift */,
 				9735CEAB1F25F29C00771566 /* HomeViewController.swift */,
 				9735CEB01F25F9B700771566 /* ModuleCollectionViewCell.swift */,
@@ -101,6 +110,9 @@
 				97EF2FF71F27945400059687 /* BlackboardViewController.swift */,
 				97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */,
 				97EF300D1F28F80000059687 /* HomeworkDetailViewController.swift */,
+				97EF300F1F29C49700059687 /* LibraryViewController.swift */,
+				97EF30111F29C4EB00059687 /* BookTableViewCell.swift */,
+				97EF30151F29CEB800059687 /* DateExtension.swift */,
 			);
 			path = "SZU Scheduler";
 			sourceTree = "<group>";
@@ -189,7 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97EF30121F29C4EC00059687 /* BookTableViewCell.swift in Sources */,
 				97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */,
+				97EF30101F29C49700059687 /* LibraryViewController.swift in Sources */,
 				97EF30061F27B3C800059687 /* Subject.swift in Sources */,
 				9735CEB51F2622AA00771566 /* ModuleControlTableViewCell.swift in Sources */,
 				977D8D0A1F13102D00862493 /* ViewController.swift in Sources */,
@@ -200,9 +214,11 @@
 				977D8D081F13102D00862493 /* AppDelegate.swift in Sources */,
 				97EF30021F27A86000059687 /* Homework.swift in Sources */,
 				97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */,
+				97EF30161F29CEB800059687 /* DateExtension.swift in Sources */,
 				97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */,
 				9735CEAF1F25F2E500771566 /* Module.swift in Sources */,
 				9735CEAC1F25F29C00771566 /* HomeViewController.swift in Sources */,
+				97EF30141F29C50200059687 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

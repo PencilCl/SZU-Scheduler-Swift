@@ -23,10 +23,7 @@ class HomeworkTableViewCell: UITableViewCell {
         if let homework = homework {
             homeworkNameLabel.text = homework.homeworkName
             subjectNameLabel.text = homework.subject.subjectName
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            optionalInfoLabel.text = "截止日期:" + dateFormatter.string(from: homework.deadline)
+            optionalInfoLabel.text = "截止日期:" + homework.deadline.format()
         }
     }
-    
 }

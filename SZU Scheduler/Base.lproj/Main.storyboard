@@ -163,7 +163,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="click:" destination="9Rk-2D-TU0" eventType="touchUpInside" id="9hn-vp-Bhy"/>
-                                                        <segue destination="QK8-7H-0eL" kind="show" identifier="blackboard" id="Dbr-Ei-bKm"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -208,17 +207,17 @@
         <!--Blackboard-->
         <scene sceneID="qb4-dd-dQf">
             <objects>
-                <viewController title="Blackboard" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="QK8-7H-0eL" customClass="BlackboardViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="blackboard" title="Blackboard" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="QK8-7H-0eL" customClass="BlackboardViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FTx-ka-dFp"/>
                         <viewControllerLayoutGuide type="bottom" id="YqY-pT-A0p"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7w0-0A-xNL">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sK2-Qg-TOg">
-                                <rect key="frame" x="0.0" y="0.0" width="188" height="40"/>
+                                <rect key="frame" x="0.0" y="20" width="188" height="40"/>
                                 <color key="backgroundColor" red="0.61176470588235299" green="0.80000000000000004" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vHb-Ls-qFn"/>
@@ -231,7 +230,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHF-yF-asF">
-                                <rect key="frame" x="187" y="0.0" width="188" height="40"/>
+                                <rect key="frame" x="187" y="20" width="188" height="40"/>
                                 <color key="backgroundColor" red="0.61176470588235299" green="0.80000000000000004" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="科目列表">
                                     <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -241,13 +240,13 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yc-jV-aHN">
-                                <rect key="frame" x="0.0" y="40" width="375" height="514"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <connections>
                                     <segue destination="zRm-91-dCA" kind="embed" id="McK-w8-Hac"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cS-9i-8Fn">
-                                <rect key="frame" x="0.0" y="38" width="188" height="2"/>
+                                <rect key="frame" x="0.0" y="58" width="188" height="2"/>
                                 <color key="backgroundColor" red="0.55969859439781455" green="0.69293755171867799" blue="0.40050101284177742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -280,7 +279,84 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1E-Je-uPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3661.5999999999999" y="-1307.4962518740631"/>
+            <point key="canvasLocation" x="3662" y="-2301"/>
+        </scene>
+        <!--图书馆-->
+        <scene sceneID="yfH-86-9NH">
+            <objects>
+                <viewController storyboardIdentifier="library" title="图书馆" hidesBottomBarWhenPushed="YES" id="wKQ-o3-4jJ" customClass="LibraryViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YYu-08-do6"/>
+                        <viewControllerLayoutGuide type="bottom" id="dqc-qL-CUF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vwk-Jp-vyi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UrB-Lb-OZI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="book" rowHeight="115" id="41f-Q0-nJs" customClass="BookTableViewCell" customModule="SZU_Scheduler" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="41f-Q0-nJs" id="neQ-Yb-bJn">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="114.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MA3-1H-c4F">
+                                                    <rect key="frame" x="16" y="15.5" width="310" height="83.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借阅书名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh3-sS-Oyk">
+                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="26.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借阅时间：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7i-gD-RRi">
+                                                            <rect key="frame" x="0.0" y="34.5" width="310" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="归还时间：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiz-p7-GJd">
+                                                            <rect key="frame" x="0.0" y="63" width="310" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MA3-1H-c4F" firstAttribute="centerY" secondItem="neQ-Yb-bJn" secondAttribute="centerY" id="6RV-VM-zvT"/>
+                                                <constraint firstItem="MA3-1H-c4F" firstAttribute="centerX" secondItem="neQ-Yb-bJn" secondAttribute="centerX" id="K48-xx-ftx"/>
+                                                <constraint firstItem="MA3-1H-c4F" firstAttribute="leading" secondItem="neQ-Yb-bJn" secondAttribute="leadingMargin" constant="8" id="TqP-OI-BuJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bookNameLabel" destination="fh3-sS-Oyk" id="uQE-PG-XkO"/>
+                                            <outlet property="borrowTimeLabel" destination="k7i-gD-RRi" id="Psh-1v-1w1"/>
+                                            <outlet property="returnDeadlineLabel" destination="aiz-p7-GJd" id="V8F-3G-msg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wKQ-o3-4jJ" id="gES-kq-Ng2"/>
+                                    <outlet property="delegate" destination="wKQ-o3-4jJ" id="pee-RR-zBu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="UrB-Lb-OZI" id="G2z-i3-gM9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OlZ-EH-5Xf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3661.5999999999999" y="-1627.7361319340332"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="S08-e7-bAp">
@@ -288,7 +364,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="partialCurl" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="zRm-91-dCA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfC-l1-S3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4463" y="-1306"/>
+            <point key="canvasLocation" x="4561" y="-2305"/>
         </scene>
         <!--作业列表-->
         <scene sceneID="6g3-eA-qgQ">
@@ -375,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8i-HZ-PBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5228" y="-1516.1919040479761"/>
+            <point key="canvasLocation" x="6134" y="-2301"/>
         </scene>
         <!--作业详情-->
         <scene sceneID="gnX-LF-bZY">
@@ -467,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgj-8c-LKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6045.6000000000004" y="-1516.1919040479761"/>
+            <point key="canvasLocation" x="7010" y="-2301"/>
         </scene>
         <!--模块管理-->
         <scene sceneID="DHx-LH-lPU">
@@ -707,7 +783,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIl-lp-y1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5228" y="-791.15442278860576"/>
+            <point key="canvasLocation" x="5290" y="-2301"/>
         </scene>
     </scenes>
     <resources>

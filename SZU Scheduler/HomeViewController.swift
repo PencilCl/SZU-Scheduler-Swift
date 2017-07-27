@@ -74,19 +74,15 @@ class HomeViewController: UIViewController,
     }
     
     func click(on item: Module?) {
-//        if let module = item {
-//            switch module.name {
-//            case "Blackboard":
-//                performSegue(withIdentifier: "blackboard", sender: nil)
-//            default:
-//                break
-//            }
-//        }
-    }
-    
-    @IBOutlet weak var moduleControlButton: UIButton! {
-        didSet {
-            moduleControlButton.layer.cornerRadius = 8
+        if let module = item {
+            switch module.name {
+            case "Blackboard":
+                self.navigationController?.pushViewController((storyboard?.instantiateViewController(withIdentifier: "blackboard"))!, animated: true)
+            case "图书馆":
+                self.navigationController?.pushViewController((storyboard?.instantiateViewController(withIdentifier: "library"))!, animated: true)
+            default:
+                break
+            }
         }
     }
     
