@@ -28,6 +28,7 @@
 		97EF30121F29C4EC00059687 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30111F29C4EB00059687 /* BookTableViewCell.swift */; };
 		97EF30141F29C50200059687 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30131F29C50200059687 /* Book.swift */; };
 		97EF30161F29CEB800059687 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30151F29CEB800059687 /* DateExtension.swift */; };
+		97EF30181F29D44300059687 /* GobyeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30171F29D44300059687 /* GobyeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		97EF30111F29C4EB00059687 /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		97EF30131F29C50200059687 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		97EF30151F29CEB800059687 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		97EF30171F29D44300059687 /* GobyeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GobyeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				97EF300F1F29C49700059687 /* LibraryViewController.swift */,
 				97EF30111F29C4EB00059687 /* BookTableViewCell.swift */,
 				97EF30151F29CEB800059687 /* DateExtension.swift */,
+				97EF30171F29D44300059687 /* GobyeViewController.swift */,
 			);
 			path = "SZU Scheduler";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				9735CEB51F2622AA00771566 /* ModuleControlTableViewCell.swift in Sources */,
 				977D8D0A1F13102D00862493 /* ViewController.swift in Sources */,
 				9735CEB11F25F9B700771566 /* ModuleCollectionViewCell.swift in Sources */,
+				97EF30181F29D44300059687 /* GobyeViewController.swift in Sources */,
 				97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */,
 				9735CEB31F26206E00771566 /* ModuleControlViewController.swift in Sources */,
 				97EF300E1F28F80000059687 /* HomeworkDetailViewController.swift in Sources */,

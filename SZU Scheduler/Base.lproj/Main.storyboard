@@ -279,7 +279,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1E-Je-uPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3662" y="-2301"/>
+            <point key="canvasLocation" x="1918" y="-1363"/>
+        </scene>
+        <!--Gobye View Controller-->
+        <scene sceneID="9Cb-TO-kkP">
+            <objects>
+                <viewController storyboardIdentifier="gobye" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="d2F-Fv-gto" customClass="GobyeViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Un-0c-dJE"/>
+                        <viewControllerLayoutGuide type="bottom" id="GyI-g7-FJf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FaS-IA-H6u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVP-DC-GdU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iVP-DC-GdU" firstAttribute="leading" secondItem="FaS-IA-H6u" secondAttribute="leading" id="4S5-Vc-zm0"/>
+                            <constraint firstAttribute="trailing" secondItem="iVP-DC-GdU" secondAttribute="trailing" id="9li-Sc-eow"/>
+                            <constraint firstItem="iVP-DC-GdU" firstAttribute="top" secondItem="FaS-IA-H6u" secondAttribute="top" id="rZM-5X-ULj"/>
+                            <constraint firstItem="iVP-DC-GdU" firstAttribute="bottom" secondItem="GyI-g7-FJf" secondAttribute="top" id="wbc-8o-PjX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="iVP-DC-GdU" id="dsy-Et-Imx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BbP-Z1-6qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2856.8000000000002" y="-1363.2683658170915"/>
         </scene>
         <!--图书馆-->
         <scene sceneID="yfH-86-9NH">
@@ -302,7 +335,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="41f-Q0-nJs" id="neQ-Yb-bJn">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="114.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MA3-1H-c4F">
@@ -356,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OlZ-EH-5Xf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3661.5999999999999" y="-1627.7361319340332"/>
+            <point key="canvasLocation" x="966" y="-1363"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="S08-e7-bAp">
@@ -364,7 +397,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="partialCurl" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="zRm-91-dCA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfC-l1-S3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4561" y="-2305"/>
+            <point key="canvasLocation" x="1918" y="-2043"/>
         </scene>
         <!--作业列表-->
         <scene sceneID="6g3-eA-qgQ">
@@ -451,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8i-HZ-PBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6134" y="-2301"/>
+            <point key="canvasLocation" x="1902" y="-2780"/>
         </scene>
         <!--作业详情-->
         <scene sceneID="gnX-LF-bZY">
@@ -543,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgj-8c-LKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7010" y="-2301"/>
+            <point key="canvasLocation" x="2777" y="-2780"/>
         </scene>
         <!--模块管理-->
         <scene sceneID="DHx-LH-lPU">
@@ -783,7 +816,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIl-lp-y1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5290" y="-2301"/>
+            <point key="canvasLocation" x="1057" y="-2780"/>
         </scene>
     </scenes>
     <resources>
