@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DC3847025A0BD17F64FD936 /* Pods_SZU_Scheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42FEBC9D8854C14C8A4157D /* Pods_SZU_Scheduler.framework */; };
 		9735CEAC1F25F29C00771566 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735CEAB1F25F29C00771566 /* HomeViewController.swift */; };
 		9735CEAF1F25F2E500771566 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735CEAE1F25F2E500771566 /* Module.swift */; };
 		9735CEB11F25F9B700771566 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735CEB01F25F9B700771566 /* ModuleCollectionViewCell.swift */; };
@@ -19,6 +20,10 @@
 		977D8D121F13102D00862493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D101F13102D00862493 /* LaunchScreen.storyboard */; };
 		97C3F49C1F2B37AB00F1C4DB /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3F49B1F2B37AB00F1C4DB /* Course.swift */; };
 		97C3F4A41F2B7DC700F1C4DB /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3F4A31F2B7DC700F1C4DB /* UserViewController.swift */; };
+		97C3F4A61F2B8C0800F1C4DB /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3F4A51F2B8C0800F1C4DB /* ScheduleViewController.swift */; };
+		97C3F4AC1F2B8D4400F1C4DB /* CVCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C3F4AB1F2B8D4400F1C4DB /* CVCalendar.framework */; };
+		97C3F4B01F2B984C00F1C4DB /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3F4AF1F2B984C00F1C4DB /* TodoItem.swift */; };
+		97C3F4B21F2B99BB00F1C4DB /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3F4B11F2B99BB00F1C4DB /* TodoTableViewCell.swift */; };
 		97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF71F27945400059687 /* BlackboardViewController.swift */; };
 		97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF91F27A59900059687 /* HomeworkViewController.swift */; };
 		97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */; };
@@ -36,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12546A6402B0FA916EA1D437 /* Pods-SZU Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZU Scheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-SZU Scheduler/Pods-SZU Scheduler.release.xcconfig"; sourceTree = "<group>"; };
+		77C507A46A9D5463EBA5FF74 /* Pods-SZU Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZU Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SZU Scheduler/Pods-SZU Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		9735CEAB1F25F29C00771566 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9735CEAE1F25F2E500771566 /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		9735CEB01F25F9B700771566 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -50,6 +57,11 @@
 		977D8D131F13102D00862493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97C3F49B1F2B37AB00F1C4DB /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		97C3F4A31F2B7DC700F1C4DB /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		97C3F4A51F2B8C0800F1C4DB /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		97C3F4A71F2B8D0A00F1C4DB /* CVCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CVCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97C3F4AB1F2B8D4400F1C4DB /* CVCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CVCalendar.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SZU_Scheduler-aqdwchdvcembrrfsmtllgejamwhv/Build/Products/Debug-iphonesimulator/CVCalendar/CVCalendar.framework"; sourceTree = "<group>"; };
+		97C3F4AF1F2B984C00F1C4DB /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		97C3F4B11F2B99BB00F1C4DB /* TodoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		97EF2FF71F27945400059687 /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
 		97EF2FF91F27A59900059687 /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
 		97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
@@ -64,6 +76,7 @@
 		97EF30171F29D44300059687 /* GobyeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GobyeViewController.swift; sourceTree = "<group>"; };
 		97EF30191F29D7B300059687 /* CurriculumScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumScheduleViewController.swift; sourceTree = "<group>"; };
 		97EF301B1F2A392600059687 /* CurriculumScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumScheduleView.swift; sourceTree = "<group>"; };
+		C42FEBC9D8854C14C8A4157D /* Pods_SZU_Scheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SZU_Scheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C3F4AC1F2B8D4400F1C4DB /* CVCalendar.framework in Frameworks */,
+				1DC3847025A0BD17F64FD936 /* Pods_SZU_Scheduler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,7 @@
 				97EF30051F27B3C800059687 /* Subject.swift */,
 				97EF30131F29C50200059687 /* Book.swift */,
 				97C3F49B1F2B37AB00F1C4DB /* Course.swift */,
+				97C3F4AF1F2B984C00F1C4DB /* TodoItem.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -92,8 +108,11 @@
 		977D8CFB1F13102D00862493 = {
 			isa = PBXGroup;
 			children = (
+				97C3F4A71F2B8D0A00F1C4DB /* CVCalendar.framework */,
 				977D8D061F13102D00862493 /* SZU Scheduler */,
 				977D8D051F13102D00862493 /* Products */,
+				9E878C6A2A3849DB65D0FFF9 /* Pods */,
+				D709EFF5D0A6E2D1BF836072 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +147,8 @@
 				97EF30191F29D7B300059687 /* CurriculumScheduleViewController.swift */,
 				97EF301B1F2A392600059687 /* CurriculumScheduleView.swift */,
 				97C3F4A31F2B7DC700F1C4DB /* UserViewController.swift */,
+				97C3F4A51F2B8C0800F1C4DB /* ScheduleViewController.swift */,
+				97C3F4B11F2B99BB00F1C4DB /* TodoTableViewCell.swift */,
 			);
 			path = "SZU Scheduler";
 			sourceTree = "<group>";
@@ -143,6 +164,24 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
+		9E878C6A2A3849DB65D0FFF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77C507A46A9D5463EBA5FF74 /* Pods-SZU Scheduler.debug.xcconfig */,
+				12546A6402B0FA916EA1D437 /* Pods-SZU Scheduler.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D709EFF5D0A6E2D1BF836072 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97C3F4AB1F2B8D4400F1C4DB /* CVCalendar.framework */,
+				C42FEBC9D8854C14C8A4157D /* Pods_SZU_Scheduler.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 977D8D161F13102D00862493 /* Build configuration list for PBXNativeTarget "SZU Scheduler" */;
 			buildPhases = (
+				078CF0F6B1624D81E7535F04 /* [CP] Check Pods Manifest.lock */,
 				977D8D001F13102D00862493 /* Sources */,
 				977D8D011F13102D00862493 /* Frameworks */,
 				977D8D021F13102D00862493 /* Resources */,
+				AD24041620D5094483F22A36 /* [CP] Embed Pods Frameworks */,
+				1A8078EC49FEC202A79B20F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,6 +254,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		078CF0F6B1624D81E7535F04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1A8078EC49FEC202A79B20F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SZU Scheduler/Pods-SZU Scheduler-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD24041620D5094483F22A36 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SZU Scheduler/Pods-SZU Scheduler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		977D8D001F13102D00862493 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -220,6 +310,8 @@
 				97EF301A1F29D7B300059687 /* CurriculumScheduleViewController.swift in Sources */,
 				97EF30121F29C4EC00059687 /* BookTableViewCell.swift in Sources */,
 				97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */,
+				97C3F4B21F2B99BB00F1C4DB /* TodoTableViewCell.swift in Sources */,
+				97C3F4A61F2B8C0800F1C4DB /* ScheduleViewController.swift in Sources */,
 				97EF30101F29C49700059687 /* LibraryViewController.swift in Sources */,
 				97EF30061F27B3C800059687 /* Subject.swift in Sources */,
 				9735CEB51F2622AA00771566 /* ModuleControlTableViewCell.swift in Sources */,
@@ -239,6 +331,7 @@
 				9735CEAF1F25F2E500771566 /* Module.swift in Sources */,
 				97C3F4A41F2B7DC700F1C4DB /* UserViewController.swift in Sources */,
 				9735CEAC1F25F29C00771566 /* HomeViewController.swift in Sources */,
+				97C3F4B01F2B984C00F1C4DB /* TodoItem.swift in Sources */,
 				97EF30141F29C50200059687 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +453,7 @@
 		};
 		977D8D171F13102D00862493 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C507A46A9D5463EBA5FF74 /* Pods-SZU Scheduler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -375,6 +469,7 @@
 		};
 		977D8D181F13102D00862493 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12546A6402B0FA916EA1D437 /* Pods-SZU Scheduler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
