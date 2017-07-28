@@ -18,6 +18,7 @@
 		977D8D0F1F13102D00862493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D0E1F13102D00862493 /* Assets.xcassets */; };
 		977D8D121F13102D00862493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D101F13102D00862493 /* LaunchScreen.storyboard */; };
 		97C3F49C1F2B37AB00F1C4DB /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3F49B1F2B37AB00F1C4DB /* Course.swift */; };
+		97C3F4A41F2B7DC700F1C4DB /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3F4A31F2B7DC700F1C4DB /* UserViewController.swift */; };
 		97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF71F27945400059687 /* BlackboardViewController.swift */; };
 		97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF91F27A59900059687 /* HomeworkViewController.swift */; };
 		97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */; };
@@ -48,6 +49,7 @@
 		977D8D111F13102D00862493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		977D8D131F13102D00862493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97C3F49B1F2B37AB00F1C4DB /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		97C3F4A31F2B7DC700F1C4DB /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		97EF2FF71F27945400059687 /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
 		97EF2FF91F27A59900059687 /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
 		97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				97EF30171F29D44300059687 /* GobyeViewController.swift */,
 				97EF30191F29D7B300059687 /* CurriculumScheduleViewController.swift */,
 				97EF301B1F2A392600059687 /* CurriculumScheduleView.swift */,
+				97C3F4A31F2B7DC700F1C4DB /* UserViewController.swift */,
 			);
 			path = "SZU Scheduler";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				97EF30161F29CEB800059687 /* DateExtension.swift in Sources */,
 				97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */,
 				9735CEAF1F25F2E500771566 /* Module.swift in Sources */,
+				97C3F4A41F2B7DC700F1C4DB /* UserViewController.swift in Sources */,
 				9735CEAC1F25F29C00771566 /* HomeViewController.swift in Sources */,
 				97EF30141F29C50200059687 /* Book.swift in Sources */,
 			);

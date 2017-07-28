@@ -111,7 +111,7 @@
         <!--荔荔在目-->
         <scene sceneID="L7l-tL-rrC">
             <objects>
-                <viewController id="JP2-5r-2d4" sceneMemberID="viewController">
+                <viewController id="JP2-5r-2d4" customClass="UserViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nhe-Qf-K0X"/>
                         <viewControllerLayoutGuide type="bottom" id="NuY-kZ-wZf"/>
@@ -119,9 +119,49 @@
                     <view key="view" contentMode="scaleToFill" id="bbf-Y9-6Cg">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boy" translatesAutoresizingMaskIntoConstraints="NO" id="Rft-f8-Oya">
+                                <rect key="frame" x="112" y="20" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="HSd-4l-e3g"/>
+                                    <constraint firstAttribute="height" constant="150" id="bQ8-is-5XH"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-vj-yFf">
+                                <rect key="frame" x="88" y="190" width="200" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Rdb-yy-sBJ"/>
+                                    <constraint firstAttribute="height" constant="36" id="gmV-ag-u2Z"/>
+                                </constraints>
+                                <state key="normal" title="退出登录">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BD-tm-ehI">
+                                <rect key="frame" x="87" y="246" width="200" height="36"/>
+                                <state key="normal" title="关于我们">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GRO-vj-yFf" firstAttribute="centerX" secondItem="bbf-Y9-6Cg" secondAttribute="centerX" id="6Gf-Sn-lXX"/>
+                            <constraint firstItem="Rft-f8-Oya" firstAttribute="centerX" secondItem="2BD-tm-ehI" secondAttribute="centerX" id="9VJ-oG-mY3"/>
+                            <constraint firstItem="2BD-tm-ehI" firstAttribute="height" secondItem="GRO-vj-yFf" secondAttribute="height" id="BIS-0b-RAk"/>
+                            <constraint firstItem="Rft-f8-Oya" firstAttribute="top" secondItem="nhe-Qf-K0X" secondAttribute="bottom" constant="20" id="Was-uA-mwU"/>
+                            <constraint firstItem="2BD-tm-ehI" firstAttribute="width" secondItem="GRO-vj-yFf" secondAttribute="width" id="dXD-ju-3qy"/>
+                            <constraint firstItem="Rft-f8-Oya" firstAttribute="centerX" secondItem="bbf-Y9-6Cg" secondAttribute="centerX" id="hRZ-lA-tSo"/>
+                            <constraint firstItem="GRO-vj-yFf" firstAttribute="top" secondItem="Rft-f8-Oya" secondAttribute="bottom" constant="20" id="rss-0o-JeN"/>
+                            <constraint firstItem="2BD-tm-ehI" firstAttribute="top" secondItem="GRO-vj-yFf" secondAttribute="bottom" constant="20" id="wK7-Tm-u2q"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="荔荔在目" id="mim-XN-Zb1"/>
+                    <connections>
+                        <outlet property="aboutButton" destination="2BD-tm-ehI" id="d6R-Ra-cvn"/>
+                        <outlet property="avatarImageView" destination="Rft-f8-Oya" id="o74-1X-VOR"/>
+                        <outlet property="logoutButton" destination="GRO-vj-yFf" id="RYt-YW-lIR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNG-F1-aCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -857,5 +897,6 @@
         <image name="Home" width="24" height="24"/>
         <image name="Time" width="24" height="24"/>
         <image name="User" width="24" height="24"/>
+        <image name="boy" width="300" height="300"/>
     </resources>
 </document>
