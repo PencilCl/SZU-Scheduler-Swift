@@ -314,6 +314,39 @@
             </objects>
             <point key="canvasLocation" x="2856.8000000000002" y="-1363.2683658170915"/>
         </scene>
+        <!--课程表-->
+        <scene sceneID="ti5-Bn-Xmv">
+            <objects>
+                <viewController storyboardIdentifier="curriculum" title="课程表" hidesBottomBarWhenPushed="YES" id="eYC-Ns-ldy" customClass="CurriculumScheduleViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LOg-fw-veh"/>
+                        <viewControllerLayoutGuide type="bottom" id="cMi-Uf-tpu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6YF-Ly-sto">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rNJ-j0-E7R" customClass="CurriculumScheduleView" customModule="SZU_Scheduler" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rNJ-j0-E7R" firstAttribute="leading" secondItem="6YF-Ly-sto" secondAttribute="leading" id="JTh-EV-Ser"/>
+                            <constraint firstItem="rNJ-j0-E7R" firstAttribute="bottom" secondItem="cMi-Uf-tpu" secondAttribute="top" id="Lvs-Dc-LvE"/>
+                            <constraint firstItem="rNJ-j0-E7R" firstAttribute="top" secondItem="6YF-Ly-sto" secondAttribute="top" id="Z5p-cx-d2K"/>
+                            <constraint firstAttribute="trailing" secondItem="rNJ-j0-E7R" secondAttribute="trailing" id="md8-5g-0eA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="schedule" destination="rNJ-j0-E7R" id="seT-8W-KCy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="msM-y2-SRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3661.5999999999999" y="-1363.2683658170915"/>
+        </scene>
         <!--图书馆-->
         <scene sceneID="yfH-86-9NH">
             <objects>

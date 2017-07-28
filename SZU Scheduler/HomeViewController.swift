@@ -82,6 +82,8 @@ class HomeViewController: UIViewController,
                 self.navigationController?.pushViewController((storyboard?.instantiateViewController(withIdentifier: "library"))!, animated: true)
             case "Gobye":
                 self.navigationController?.pushViewController((storyboard?.instantiateViewController(withIdentifier: "gobye"))!, animated: true)
+            case "课程表":
+                self.navigationController?.pushViewController((storyboard?.instantiateViewController(withIdentifier: "curriculum"))!, animated: true)
             default:
                 break
             }

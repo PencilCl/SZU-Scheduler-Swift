@@ -17,6 +17,7 @@
 		977D8D0D1F13102D00862493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D0B1F13102D00862493 /* Main.storyboard */; };
 		977D8D0F1F13102D00862493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D0E1F13102D00862493 /* Assets.xcassets */; };
 		977D8D121F13102D00862493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D101F13102D00862493 /* LaunchScreen.storyboard */; };
+		97C3F49C1F2B37AB00F1C4DB /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3F49B1F2B37AB00F1C4DB /* Course.swift */; };
 		97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF71F27945400059687 /* BlackboardViewController.swift */; };
 		97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF91F27A59900059687 /* HomeworkViewController.swift */; };
 		97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */; };
@@ -29,6 +30,8 @@
 		97EF30141F29C50200059687 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30131F29C50200059687 /* Book.swift */; };
 		97EF30161F29CEB800059687 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30151F29CEB800059687 /* DateExtension.swift */; };
 		97EF30181F29D44300059687 /* GobyeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30171F29D44300059687 /* GobyeViewController.swift */; };
+		97EF301A1F29D7B300059687 /* CurriculumScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF30191F29D7B300059687 /* CurriculumScheduleViewController.swift */; };
+		97EF301C1F2A392600059687 /* CurriculumScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF301B1F2A392600059687 /* CurriculumScheduleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,7 @@
 		977D8D0E1F13102D00862493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		977D8D111F13102D00862493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		977D8D131F13102D00862493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97C3F49B1F2B37AB00F1C4DB /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		97EF2FF71F27945400059687 /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
 		97EF2FF91F27A59900059687 /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
 		97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 		97EF30131F29C50200059687 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		97EF30151F29CEB800059687 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		97EF30171F29D44300059687 /* GobyeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GobyeViewController.swift; sourceTree = "<group>"; };
+		97EF30191F29D7B300059687 /* CurriculumScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumScheduleViewController.swift; sourceTree = "<group>"; };
+		97EF301B1F2A392600059687 /* CurriculumScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumScheduleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 				97EF30011F27A86000059687 /* Homework.swift */,
 				97EF30051F27B3C800059687 /* Subject.swift */,
 				97EF30131F29C50200059687 /* Book.swift */,
+				97C3F49B1F2B37AB00F1C4DB /* Course.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -116,6 +123,8 @@
 				97EF30111F29C4EB00059687 /* BookTableViewCell.swift */,
 				97EF30151F29CEB800059687 /* DateExtension.swift */,
 				97EF30171F29D44300059687 /* GobyeViewController.swift */,
+				97EF30191F29D7B300059687 /* CurriculumScheduleViewController.swift */,
+				97EF301B1F2A392600059687 /* CurriculumScheduleView.swift */,
 			);
 			path = "SZU Scheduler";
 			sourceTree = "<group>";
@@ -164,6 +173,7 @@
 					977D8D031F13102D00862493 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9KP78P9R9V;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -204,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97EF301A1F29D7B300059687 /* CurriculumScheduleViewController.swift in Sources */,
 				97EF30121F29C4EC00059687 /* BookTableViewCell.swift in Sources */,
 				97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */,
 				97EF30101F29C49700059687 /* LibraryViewController.swift in Sources */,
@@ -212,8 +223,10 @@
 				977D8D0A1F13102D00862493 /* ViewController.swift in Sources */,
 				9735CEB11F25F9B700771566 /* ModuleCollectionViewCell.swift in Sources */,
 				97EF30181F29D44300059687 /* GobyeViewController.swift in Sources */,
+				97EF301C1F2A392600059687 /* CurriculumScheduleView.swift in Sources */,
 				97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */,
 				9735CEB31F26206E00771566 /* ModuleControlViewController.swift in Sources */,
+				97C3F49C1F2B37AB00F1C4DB /* Course.swift in Sources */,
 				97EF300E1F28F80000059687 /* HomeworkDetailViewController.swift in Sources */,
 				977D8D081F13102D00862493 /* AppDelegate.swift in Sources */,
 				97EF30021F27A86000059687 /* Homework.swift in Sources */,
@@ -345,11 +358,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9KP78P9R9V;
 				INFOPLIST_FILE = "SZU Scheduler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.pencilsky.SZU-Scheduler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -358,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9KP78P9R9V;
 				INFOPLIST_FILE = "SZU Scheduler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
