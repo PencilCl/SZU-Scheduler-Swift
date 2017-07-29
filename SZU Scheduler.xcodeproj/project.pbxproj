@@ -127,28 +127,15 @@
 		977D8D061F13102D00862493 /* SZU Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				97BC092D1F2C6F44009BD3E7 /* Extension */,
+				97BC092C1F2C6F3B009BD3E7 /* Service */,
 				9735CEAD1F25F2BF00771566 /* Entity */,
 				977D8D191F1469A000862493 /* Support Files */,
+				97BC09261F2C6E52009BD3E7 /* Home */,
+				97BC092B1F2C6F10009BD3E7 /* Schedule */,
+				97C3F4A31F2B7DC700F1C4DB /* UserViewController.swift */,
 				977D8D091F13102D00862493 /* ViewController.swift */,
 				977D8D0B1F13102D00862493 /* Main.storyboard */,
-				97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */,
-				97EF2FF91F27A59900059687 /* HomeworkViewController.swift */,
-				9735CEAB1F25F29C00771566 /* HomeViewController.swift */,
-				9735CEB01F25F9B700771566 /* ModuleCollectionViewCell.swift */,
-				9735CEB21F26206E00771566 /* ModuleControlViewController.swift */,
-				9735CEB41F2622AA00771566 /* ModuleControlTableViewCell.swift */,
-				97EF2FF71F27945400059687 /* BlackboardViewController.swift */,
-				97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */,
-				97EF300D1F28F80000059687 /* HomeworkDetailViewController.swift */,
-				97EF300F1F29C49700059687 /* LibraryViewController.swift */,
-				97EF30111F29C4EB00059687 /* BookTableViewCell.swift */,
-				97EF30151F29CEB800059687 /* DateExtension.swift */,
-				97EF30171F29D44300059687 /* GobyeViewController.swift */,
-				97EF30191F29D7B300059687 /* CurriculumScheduleViewController.swift */,
-				97EF301B1F2A392600059687 /* CurriculumScheduleView.swift */,
-				97C3F4A31F2B7DC700F1C4DB /* UserViewController.swift */,
-				97C3F4A51F2B8C0800F1C4DB /* ScheduleViewController.swift */,
-				97C3F4B11F2B99BB00F1C4DB /* TodoTableViewCell.swift */,
 			);
 			path = "SZU Scheduler";
 			sourceTree = "<group>";
@@ -162,6 +149,83 @@
 				977D8D131F13102D00862493 /* Info.plist */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		97BC09261F2C6E52009BD3E7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				97BC09291F2C6EC0009BD3E7 /* ModuleControl */,
+				97BC09271F2C6E9D009BD3E7 /* Blackboard */,
+				97BC09281F2C6EA7009BD3E7 /* CurriculumSchedule */,
+				97BC092A1F2C6EE2009BD3E7 /* Library */,
+				97EF30171F29D44300059687 /* GobyeViewController.swift */,
+				9735CEAB1F25F29C00771566 /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		97BC09271F2C6E9D009BD3E7 /* Blackboard */ = {
+			isa = PBXGroup;
+			children = (
+				97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */,
+				97EF2FF91F27A59900059687 /* HomeworkViewController.swift */,
+				97EF2FF71F27945400059687 /* BlackboardViewController.swift */,
+				97EF30031F27AB4D00059687 /* SubjectTableViewController.swift */,
+				97EF300D1F28F80000059687 /* HomeworkDetailViewController.swift */,
+			);
+			name = Blackboard;
+			sourceTree = "<group>";
+		};
+		97BC09281F2C6EA7009BD3E7 /* CurriculumSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				97EF30191F29D7B300059687 /* CurriculumScheduleViewController.swift */,
+				97EF301B1F2A392600059687 /* CurriculumScheduleView.swift */,
+			);
+			name = CurriculumSchedule;
+			sourceTree = "<group>";
+		};
+		97BC09291F2C6EC0009BD3E7 /* ModuleControl */ = {
+			isa = PBXGroup;
+			children = (
+				9735CEB01F25F9B700771566 /* ModuleCollectionViewCell.swift */,
+				9735CEB21F26206E00771566 /* ModuleControlViewController.swift */,
+				9735CEB41F2622AA00771566 /* ModuleControlTableViewCell.swift */,
+			);
+			name = ModuleControl;
+			sourceTree = "<group>";
+		};
+		97BC092A1F2C6EE2009BD3E7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				97EF300F1F29C49700059687 /* LibraryViewController.swift */,
+				97EF30111F29C4EB00059687 /* BookTableViewCell.swift */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		97BC092B1F2C6F10009BD3E7 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				97C3F4A51F2B8C0800F1C4DB /* ScheduleViewController.swift */,
+				97C3F4B11F2B99BB00F1C4DB /* TodoTableViewCell.swift */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
+		97BC092C1F2C6F3B009BD3E7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		97BC092D1F2C6F44009BD3E7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				97EF30151F29CEB800059687 /* DateExtension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		9E878C6A2A3849DB65D0FFF9 /* Pods */ = {
