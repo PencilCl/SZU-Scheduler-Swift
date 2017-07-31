@@ -1,15 +1,22 @@
 PODS:
   - Alamofire (4.5.0)
   - CVCalendar (1.5.0)
+  - RxCocoa (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxSwift (3.6.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - CVCalendar (~> 1.5.0)
+  - RxCocoa (~> 3.0)
+  - RxSwift (~> 3.0)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   CVCalendar: 5d51a7bda1b9439b612de69d86a91a73befa1936
+  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
 
-PODFILE CHECKSUM: 2ed59c32fc3d19340952e167b3ce2cb5444d7f5e
+PODFILE CHECKSUM: 6f1100d709bee6bc766f84dda6f715b18be03a89
 
 COCOAPODS: 1.2.1

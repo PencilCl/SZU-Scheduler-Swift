@@ -20,15 +20,42 @@ class ViewController: UIViewController {
         layer.cornerRadius = 5
     }
     
-    @IBAction func login(_ sender: UIButton) {
-        if let username = account.text,
-            let pass = password.text{
-            if username == "150888", pass == "123456" {
-                performSegue(withIdentifier: "login", sender: self)
-                return
-            }
+    override func viewDidAppear(_ animated: Bool) {
+        // 用户已登录则直接加载主界面
+        if let user = UserService.getUserFromUserDefaults() {
+            UserService.currentUser = user
+            performSegue(withIdentifier: "login", sender: nil)
+            return
         }
-        print("login fail")
+    }
+    
+    @IBAction func login(_ sender: UIButton) {
+        if let username = account.text, let pass = password.text,
+            !username.isEmpty, !pass.isEmpty {
+            UserService.login(user: User(username: username, password: pass))
+                .subscribe { [weak self] event in
+                    switch event {
+                    case .next(_):
+                        if let user = event.element {
+                            UserService.currentUser = user
+                            UserService.saveCurrentUserInfo()
+                            self?.performSegue(withIdentifier: "login", sender: nil)
+                        } else {
+                            self?.present(CommonUtil.getErrorAlertController(message: "获取用户信息失败"), animated: true, completion: nil)
+                        }
+                    case .error(_):
+                        self?.present(CommonUtil.getErrorAlertController(message: "登录失败"), animated: true, completion: nil)
+                    default:
+                        break
+                    }
+                }
+        } else {
+            present(CommonUtil.getErrorAlertController(message: "用户名或密码不能为空"), animated: true, completion: nil)
+        }
+    }
+
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return false
     }
     
 }

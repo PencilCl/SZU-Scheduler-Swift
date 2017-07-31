@@ -13,6 +13,9 @@
 		9735CEB11F25F9B700771566 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735CEB01F25F9B700771566 /* ModuleCollectionViewCell.swift */; };
 		9735CEB31F26206E00771566 /* ModuleControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735CEB21F26206E00771566 /* ModuleControlViewController.swift */; };
 		9735CEB51F2622AA00771566 /* ModuleControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735CEB41F2622AA00771566 /* ModuleControlTableViewCell.swift */; };
+		9769DCE21F2CC76400CBE202 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DCE11F2CC76400CBE202 /* UserService.swift */; };
+		9769DCE61F2EC32D00CBE202 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DCE51F2EC32D00CBE202 /* CommonUtil.swift */; };
+		9769DCE81F2F2FE400CBE202 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DCE71F2F2FE400CBE202 /* User.swift */; };
 		977D8D081F13102D00862493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D8D071F13102D00862493 /* AppDelegate.swift */; };
 		977D8D0A1F13102D00862493 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D8D091F13102D00862493 /* ViewController.swift */; };
 		977D8D0D1F13102D00862493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977D8D0B1F13102D00862493 /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		9735CEB01F25F9B700771566 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
 		9735CEB21F26206E00771566 /* ModuleControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleControlViewController.swift; sourceTree = "<group>"; };
 		9735CEB41F2622AA00771566 /* ModuleControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleControlTableViewCell.swift; sourceTree = "<group>"; };
+		9769DCE11F2CC76400CBE202 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		9769DCE51F2EC32D00CBE202 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
+		9769DCE71F2F2FE400CBE202 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		977D8D041F13102D00862493 /* SZU Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SZU Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		977D8D071F13102D00862493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		977D8D091F13102D00862493 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,8 +107,17 @@
 				97EF30131F29C50200059687 /* Book.swift */,
 				97C3F49B1F2B37AB00F1C4DB /* Course.swift */,
 				97C3F4AF1F2B984C00F1C4DB /* TodoItem.swift */,
+				9769DCE71F2F2FE400CBE202 /* User.swift */,
 			);
 			name = Entity;
+			sourceTree = "<group>";
+		};
+		9769DCE41F2EC31D00CBE202 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9769DCE51F2EC32D00CBE202 /* CommonUtil.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		977D8CFB1F13102D00862493 = {
@@ -127,6 +142,7 @@
 		977D8D061F13102D00862493 /* SZU Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				9769DCE41F2EC31D00CBE202 /* Util */,
 				97BC092D1F2C6F44009BD3E7 /* Extension */,
 				97BC092C1F2C6F3B009BD3E7 /* Service */,
 				9735CEAD1F25F2BF00771566 /* Entity */,
@@ -216,6 +232,7 @@
 		97BC092C1F2C6F3B009BD3E7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9769DCE11F2CC76400CBE202 /* UserService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -373,10 +390,13 @@
 			files = (
 				97EF301A1F29D7B300059687 /* CurriculumScheduleViewController.swift in Sources */,
 				97EF30121F29C4EC00059687 /* BookTableViewCell.swift in Sources */,
+				9769DCE21F2CC76400CBE202 /* UserService.swift in Sources */,
 				97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */,
 				97C3F4B21F2B99BB00F1C4DB /* TodoTableViewCell.swift in Sources */,
 				97C3F4A61F2B8C0800F1C4DB /* ScheduleViewController.swift in Sources */,
+				9769DCE61F2EC32D00CBE202 /* CommonUtil.swift in Sources */,
 				97EF30101F29C49700059687 /* LibraryViewController.swift in Sources */,
+				9769DCE81F2F2FE400CBE202 /* User.swift in Sources */,
 				97EF30061F27B3C800059687 /* Subject.swift in Sources */,
 				9735CEB51F2622AA00771566 /* ModuleControlTableViewCell.swift in Sources */,
 				977D8D0A1F13102D00862493 /* ViewController.swift in Sources */,
