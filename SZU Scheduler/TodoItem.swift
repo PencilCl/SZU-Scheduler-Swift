@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class TodoItem {
-    var timeBegin: String
-    var timeEnd: String
-    var title: String
-    var description: String
+public class TodoItem: NSObject, TodoItemProtocol {
+    public var timeBegin: String
+    public var timeEnd: String
+    public var detail: String
+    public var title: String
     
-    init(timeBegin: String, timeEnd: String, title: String, description: String) {
+    init(timeBegin: String, timeEnd: String, title: String, detail: String) {
         self.timeBegin = timeBegin
         self.timeEnd = timeEnd
         self.title = title
-        self.description = description
+        self.detail = detail
     }
 }

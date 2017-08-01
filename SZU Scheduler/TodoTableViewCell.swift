@@ -24,7 +24,7 @@ class TodoTableViewCell: UITableViewCell {
             timeBeginLabel.text = item.timeBegin
             timeEndLabel.text = item.timeEnd
             titleLabel.text = item.title
-            descriptionLabel.text = item.description
+            descriptionLabel.text = item.detail
         }
     }
 }

@@ -22,8 +22,8 @@ class HomeworkTableViewCell: UITableViewCell {
     private func updateUI() {
         if let homework = homework {
             homeworkNameLabel.text = homework.homeworkName
-            subjectNameLabel.text = homework.subject.subjectName
-            optionalInfoLabel.text = "截止日期:" + homework.deadline.format()
+            subjectNameLabel.text = homework.subject!.subjectName
+            optionalInfoLabel.text = "截止日期:" + homework.deadline!.format()
         }
     }
 }

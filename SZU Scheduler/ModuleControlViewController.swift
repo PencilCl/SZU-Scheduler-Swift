@@ -29,7 +29,7 @@ class ModuleControlViewController: UIViewController,
         
         if let navigationBar = navigationController?.navigationBar {
             lastNavigationBarColor = navigationBar.barTintColor
-            navigationBar.barTintColor = UIColor.rgbColorFromHex(rgb: 0xE84E40)
+            navigationBar.barTintColor = 0xE84E40.uiColor
         }
     }
     

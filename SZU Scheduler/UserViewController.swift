@@ -24,7 +24,7 @@ class UserViewController: UIViewController {
     private func decorateButton(_ button:UIButton) {
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 1
-        button.backgroundColor = UIColor.rgbColorFromHex(rgb: 0x5677FC)
+        button.backgroundColor = 0x5677FC.uiColor
         button.layer.borderColor = UIColor.lightGray.cgColor
     }
     

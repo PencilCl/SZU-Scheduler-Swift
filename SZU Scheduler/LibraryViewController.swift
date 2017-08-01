@@ -12,7 +12,7 @@ class LibraryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var bookList: [Book]? {
+    var bookList: [Library]? {
         didSet {
             tableView?.reloadData()
         }
@@ -21,9 +21,9 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = UIColor.rgbColorFromHex(rgb: 0xff7043)
+        navigationController?.navigationBar.barTintColor = 0xff7043.uiColor
         
-        bookList = [Book(bookName: "测试书名", borrowTime: Date(), returnDeadline: Date())]
+//        bookList = [Library(bookName: "测试书名", startDate: Date(), endDate: Date())]
     }
 }
 

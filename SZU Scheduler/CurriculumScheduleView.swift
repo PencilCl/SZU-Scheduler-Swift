@@ -12,14 +12,14 @@ import UIKit
 class CurriculumScheduleView: UIView {
     
     private var colorList = [
-        UIColor.rgbColorFromHex(rgb: -1644806),
-        UIColor.rgbColorFromHex(rgb: -983056),
-        UIColor.rgbColorFromHex(rgb: -983041),
-        UIColor.rgbColorFromHex(rgb: -3851),
-        UIColor.rgbColorFromHex(rgb: -4133),
-        UIColor.rgbColorFromHex(rgb: -4198401),
-        UIColor.rgbColorFromHex(rgb: -2031617),
-        UIColor.rgbColorFromHex(rgb: -7681)
+        -1644806,
+        -983056,
+        -983041,
+        -3851,
+        -4133,
+        -4198401,
+        -2031617,
+        -7681
     ]
 
     let headerHeight = CGFloat(30)
@@ -30,15 +30,15 @@ class CurriculumScheduleView: UIView {
     var scrollView: UIScrollView!
     var headerLabelList = [UILabel]()
     
-    var courseMap = [Course: UILabel]() {
+    var lessonMap = [Lesson: UILabel]() {
         didSet {
             layoutIfNeeded()
         }
     }
     
-    func addCourse(_ course: Course) {
+    func addCourse(_ lesson: Lesson) {
         let label = UILabel()
-        label.text = "\(course.courseName)\n\(course.venue)"
+        label.text = "\(lesson.lessonName!)\n\(lesson.venue!)"
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
         label.font = label.font.withSize(13)
@@ -46,15 +46,15 @@ class CurriculumScheduleView: UIView {
         label.textColor = UIColor.gray
         label.clipsToBounds = true
         label.layer.cornerRadius = 8
-        label.backgroundColor = colorList[abs(course.courseName.hashValue) % colorList.count]
-        courseMap[course] = label
+        label.backgroundColor = colorList[abs(lesson.lessonName!.hashValue) % colorList.count].uiColor
+        lessonMap[lesson] = label
         scrollView.addSubview(label)
     }
     
-    func removeCourse(_ course: Course) {
-        if let label = courseMap[course] {
+    func removeCourse(_ lesson: Lesson) {
+        if let label = lessonMap[lesson] {
             label.removeFromSuperview()
-            courseMap.removeValue(forKey: course)
+            lessonMap.removeValue(forKey: lesson)
             layoutIfNeeded()
         }
     }
@@ -126,8 +126,8 @@ class CurriculumScheduleView: UIView {
             headerLabelList[i].frame = CGRect(x: averageWidth * CGFloat(i) + firstColWidth, y: zeroCGFloat, width: averageWidth, height: headerHeight)
             headerLabelList[i].layoutIfNeeded()
         }
-        for (course, label) in courseMap {
-            label.frame = CGRect(x: firstColWidth + averageWidth * CGFloat(course.day - 1), y: CGFloat(course.timeBegin - 1) * rowHeight, width: averageWidth, height: CGFloat((course.timeEnd - course.timeBegin + 1)) * rowHeight)
+        for (lesson, label) in lessonMap {
+            label.frame = CGRect(x: firstColWidth + averageWidth * CGFloat(lesson.day - 1), y: CGFloat(lesson.begin - 1) * rowHeight, width: averageWidth, height: CGFloat((lesson.end - lesson.begin + 1)) * rowHeight)
             label.layoutIfNeeded()
         }
         scrollView.frame = CGRect(x: 0, y: headerHeight, width: rect.width, height: rect.height - headerHeight)

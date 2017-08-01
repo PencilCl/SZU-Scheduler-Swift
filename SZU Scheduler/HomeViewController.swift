@@ -14,12 +14,13 @@ class HomeViewController: UIViewController,
     UICollectionViewDelegateFlowLayout,
     ModuleCollectionViewCellDelegate {
 
-    var moduleList = [
-        Module(name: "Blackboard", color: UIColor.rgbColorFromHex(rgb: 0x9ccc65), show: true),
-        Module(name: "图书馆", color: UIColor.rgbColorFromHex(rgb: 0xff7043), show: true),
-        Module(name: "Gobye", color: UIColor.rgbColorFromHex(rgb: 0x29b6f6), show: true),
-        Module(name: "课程表", color: UIColor.rgbColorFromHex(rgb: 0x5c6bc0), show: true)
-    ]
+    var moduleList: [Module] = []
+//    [
+//        Module(name: "Blackboard", color: 0x9ccc65, show: true),
+//        Module(name: "图书馆", color: 0xff7043, show: true),
+//        Module(name: "Gobye", color: 0x29b6f6, show: true),
+//        Module(name: "课程表", color: 0x5c6bc0, show: true)
+//    ]
     
     @IBOutlet weak var moduleCollectionView: UICollectionView!
     
@@ -42,7 +43,7 @@ class HomeViewController: UIViewController,
         super.viewWillAppear(animated)
         
         navigationController?.showHireLine()
-        navigationController?.navigationBar.barTintColor = UIColor.rgbColorFromHex(rgb: 0x5677FC)
+        navigationController?.navigationBar.barTintColor = 0x5677FC.uiColor
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -75,7 +76,7 @@ class HomeViewController: UIViewController,
     
     func click(on item: Module?) {
         if let module = item {
-            switch module.name {
+            switch module.name! {
             case "Blackboard":
                 self.navigationController?.pushViewController((storyboard?.instantiateViewController(withIdentifier: "blackboard"))!, animated: true)
             case "图书馆":
@@ -98,16 +99,4 @@ class HomeViewController: UIViewController,
         }
     }
     
-}
-
-extension UIColor {
-    /**
-     *  16进制 转 RGB
-     */
-    class func rgbColorFromHex(rgb:Int) ->UIColor {
-        return UIColor(red: ((CGFloat)((rgb & 0xFF0000) >> 16)) / 255.0,
-                       green: ((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0,
-                       blue: ((CGFloat)(rgb & 0xFF)) / 255.0,
-                       alpha: 1.0)
-    }
 }

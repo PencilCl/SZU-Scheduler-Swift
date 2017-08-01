@@ -9,7 +9,7 @@
 import UIKit
 
 class BookTableViewCell: UITableViewCell {
-    var book: Book? {
+    var book: Library? {
         didSet {
             updateUI()
         }
@@ -22,8 +22,8 @@ class BookTableViewCell: UITableViewCell {
     private func updateUI() {
         if let book = book {
             bookNameLabel.text = book.bookName
-            borrowTimeLabel.text = "借阅时间: " + book.borrowTime.format(with: "yyyy-MM-dd")
-            returnDeadlineLabel.text = "归还时间: " + book.returnDeadline.format(with: "yyyy-MM-dd")
+            borrowTimeLabel.text = "借阅时间: " + book.startDate!.format(with: "yyyy-MM-dd")
+            returnDeadlineLabel.text = "归还时间: " + book.endDate!.format(with: "yyyy-MM-dd")
         }
     }
 }

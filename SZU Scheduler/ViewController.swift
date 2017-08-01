@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         if let username = account.text, let pass = password.text,
             !username.isEmpty, !pass.isEmpty {
-            UserService.login(user: User(username: username, password: pass))
+            UserService.login(username: username, password: pass)
                 .subscribe { [weak self] event in
                     switch event {
                     case .next(_):
@@ -43,8 +43,15 @@ class ViewController: UIViewController {
                         } else {
                             self?.present(CommonUtil.getErrorAlertController(message: "获取用户信息失败"), animated: true, completion: nil)
                         }
-                    case .error(_):
-                        self?.present(CommonUtil.getErrorAlertController(message: "登录失败"), animated: true, completion: nil)
+                    case .error(let error):
+                        var errorMsg = "发生未知错误"
+                        if let e = error as? UserService.OperationError {
+                            switch e {
+                            case .AuthError(let msg), .RequestError(let msg), .NotFoundError(let msg):
+                                errorMsg = msg
+                            }
+                        }
+                        self?.present(CommonUtil.getErrorAlertController(message: errorMsg), animated: true, completion: nil)
                     default:
                         break
                     }

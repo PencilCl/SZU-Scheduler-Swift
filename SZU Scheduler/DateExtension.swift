@@ -8,10 +8,10 @@
 
 import Foundation
 
-extension Date {
+extension NSDate {
     func format(with dateFormat: String = "yyyy-MM-dd HH:mm:ss") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
-        return dateFormatter.string(from: self)
+        return dateFormatter.string(from: self as Date)
     }
 }

@@ -30,11 +30,11 @@ class ScheduleViewController: UIViewController {
         self.calendarView.calendarDelegate = self
         
         todoItemList = [
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", description: "详细描述"),
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", description: "详细描述"),
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", description: "详细描述"),
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", description: "详细描述"),
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", description: "详细描述")
+            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述"),
+            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述"),
+            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述"),
+            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述"),
+            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述")
         ]
     }
 

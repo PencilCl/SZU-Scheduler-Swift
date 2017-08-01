@@ -20,7 +20,7 @@ class GobyeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = UIColor.rgbColorFromHex(rgb: 0x29b6f6)
+        navigationController?.navigationBar.barTintColor = 0x29b6f6.uiColor
     }
     
 }

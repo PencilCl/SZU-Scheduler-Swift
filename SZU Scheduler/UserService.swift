@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreData
+
 import Alamofire
 import RxSwift
 import RxCocoa
@@ -16,24 +18,24 @@ public class UserService {
     private static let stuNumUrl = "http://elearning.szu.edu.cn/webapps/blackboard/execute/editUser?context=self_modify" // 获取学号url
     private static let stuInfoUrl = "http://pencilsky.cn:9090/api/curriculum/student/?stuNum="
     
-    static var currentUser: User?
+    static var currentUser: Student?
     
-    enum OperationError: Error {
-        case NotFoundError
-        case RequestError
+    public enum OperationError: Error {
+        case NotFoundError(String)
+        case RequestError(String)
         case AuthError(String)
     }
     
     // Getting user info from userDefaults
     // If not found, return nil
-    public class func getUserFromUserDefaults() -> User? {
+    public class func getUserFromUserDefaults() -> Student? {
         let userDefaults = UserDefaults.standard
         if userDefaults.string(forKey: "stuNum") != nil {
-            return User(username: userDefaults.string(forKey: "stuNum")!,
-                        password: userDefaults.string(forKey: "password")!,
-                        gender: userDefaults.string(forKey: "gender")! == "男" ? .male : .female,
-                        stuNum: userDefaults.string(forKey: "stuNum")!,
-                        name: userDefaults.string(forKey: "name")!)
+//            return Student(username: userDefaults.string(forKey: "stuNum")!,
+//                        password: userDefaults.string(forKey: "password")!,
+//                        gender: userDefaults.string(forKey: "gender")! == "男" ? .male : .female,
+//                        stuNum: userDefaults.string(forKey: "stuNum")!,
+//                        name: userDefaults.string(forKey: "name")!)
         }
         return nil
     }
@@ -45,10 +47,14 @@ public class UserService {
         userDefaults.set(user.username, forKey: "username")
         userDefaults.set(user.password, forKey: "password")
         userDefaults.set(user.name, forKey: "name")
-        userDefaults.set(user.gender == .male ? "男" : "女", forKey: "gender")
+        userDefaults.set(user.gender, forKey: "gender")
     }
     
-    public class func login(user: User) -> Observable<User?> {
+    public class func login(username: String, password: String) -> Observable<Student?> {
+        let user = create()
+        user.username = username
+        user.password = password
+        
         return Observable<DataResponse<String>>.create { observer -> Disposable in
             Alamofire.request("https://authserver.szu.edu.cn/authserver/login?service=https%3a%2f%2fauth.szu.edu.cn%2fcas.aspx%2flogin%3fservice%3dhttp%3a%2f%2felearning.szu.edu.cn%2fwebapps%2fcbb-sdgxtyM-BBLEARN%2fgetuserid.jsp")
                 .responseString { response in
@@ -56,7 +62,7 @@ public class UserService {
                     case .success(_):
                         observer.onNext(response)
                     case .failure(_):
-                        observer.onError(OperationError.RequestError)
+                        observer.onError(OperationError.RequestError("获取登录信息失败"))
                     }
                 }
             return Disposables.create { }
@@ -64,20 +70,20 @@ public class UserService {
             if successUrl == response.response?.url?.absoluteString {
                 return nil
             } else if let html = response.result.value,
-                let lt = try? getInputValueByName(html, name: "lt") {
-                return lt
+                getInputValueByName(html, name: "lt") != nil {
+                return html
             }
             return ""
         }.flatMap {
-            postLogin(user: user, lt: $0)
-        }.flatMap { (_) -> Observable<User?> in
+            postLogin(user: user, html: $0)
+        }.flatMap { (_) -> Observable<Student?> in
             getUserInfo(user: user)
         }
     }
     
     // Getting student number、name and gender
     // Note: Need ensuring login
-    public class func getUserInfo(user: User) -> Observable<User?> {
+    public class func getUserInfo(user: Student) -> Observable<Student?> {
         return Observable<String>.create { observer -> Disposable in
             Alamofire.request(stuNumUrl)
                 .responseString { response in
@@ -87,18 +93,18 @@ public class UserService {
                             if let stuNum = getStuNum(html) {
                                 observer.onNext(stuNum)
                             } else {
-                                observer.onError(OperationError.NotFoundError)
+                                observer.onError(OperationError.NotFoundError("获取学号信息失败"))
                             }
                         } else {
-                            observer.onError(OperationError.RequestError)
+                            observer.onError(OperationError.RequestError("获取学号页面信息失败"))
                         }
                     case .failure(_):
-                        observer.onError(OperationError.RequestError)
+                        observer.onError(OperationError.RequestError("请求学号页面失败"))
                     }
             }
             return Disposables.create { }
-        }.flatMap { stuNum -> Observable<User?> in
-            Observable<User?>.create { observer -> Disposable in
+        }.flatMap { stuNum -> Observable<Student?> in
+            Observable<Student?>.create { observer -> Disposable in
                 Alamofire.request(stuInfoUrl + stuNum)
                     .responseJSON { response in
                         switch response.result {
@@ -111,13 +117,13 @@ public class UserService {
                                 let gender = data["sex"] as? String {
                                 user.stuNum = stuNum
                                 user.name = name
-                                user.gender = gender == "男" ? .male : .female
+                                user.gender = gender
                                 observer.onNext(user)
                             } else {
-                                observer.onError(OperationError.RequestError)
+                                observer.onError(OperationError.RequestError("获取学号信息失败"))
                             }
                         case .failure(_):
-                            observer.onError(OperationError.RequestError)
+                            observer.onError(OperationError.RequestError("请求获取学号失败"))
                         }
                 }
                 return Disposables.create { }
@@ -125,19 +131,19 @@ public class UserService {
         }
     }
     
-    private class func postLogin(user: User, lt: String?) -> Observable<Void> {
+    private class func postLogin(user: Student, html: String?) -> Observable<Void> {
         return Observable<Void>.create({ observer -> Disposable in
-            if lt == nil {
+            if html == nil {
                 observer.onNext()
             } else {
                 let params: Parameters = [
-                    "lt": lt!,
-                    "execution": "e1s1",
+                    "lt": getInputValueByName(html!, name: "lt")!,
+                    "execution": getInputValueByName(html!, name: "execution")!,
                     "_eventId": "submit",
                     "dllt": "userNamePasswordLogin",
                     "rmShown": "1",
-                    "username": user.username,
-                    "password": user.password
+                    "username": user.username!,
+                    "password": user.password!
                 ]
                 Alamofire.request("https://authserver.szu.edu.cn/authserver/login?service=https%3a%2f%2fauth.szu.edu.cn%2fcas.aspx%2flogin%3fservice%3dhttp%3a%2f%2felearning.szu.edu.cn%2fwebapps%2fcbb-sdgxtyM-BBLEARN%2fgetuserid.jsp", method: .post, parameters: params)
                     .responseString { response in
@@ -149,10 +155,10 @@ public class UserService {
                                 let errorMsg = getLoginError(html) {
                                 observer.onError(OperationError.AuthError(errorMsg))
                             } else {
-                                observer.onError(OperationError.RequestError)
+                                observer.onError(OperationError.RequestError("登录失败,请重试"))
                             }
                         case .failure(_):
-                            observer.onError(OperationError.RequestError)
+                            observer.onError(OperationError.RequestError("请求登录失败"))
                         }
                 }
             }
@@ -170,14 +176,14 @@ public class UserService {
         return nil
     }
     
-    private class func getInputValueByName(_ html: String, name: String) throws -> String {
+    private class func getInputValueByName(_ html: String, name: String) -> String? {
         let pattern = "<input type=\"hidden\" name=\"\(name)\" value=\"(.*)?\"/>"
         let regex = try! NSRegularExpression(pattern: pattern, options: .init(rawValue: 0))
         let res = regex.matches(in: html, options: .init(rawValue: 0), range: NSMakeRange(0, html.characters.count))
         if res.count > 0 {
             return (html as NSString).substring(with: res[0].rangeAt(1))
         }
-        throw OperationError.NotFoundError
+        return nil
     }
     
     private class func getLoginError(_ html: String) -> String? {
@@ -188,6 +194,13 @@ public class UserService {
             return (html as NSString).substring(with: res[0].rangeAt(1))
         }
         return nil
+    }
+    
+    private class func create() -> Student {
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let context = app.persistentContainer.viewContext
+        
+        return NSEntityDescription.insertNewObject(forEntityName: "Student", into: context) as! Student
     }
     
 }
