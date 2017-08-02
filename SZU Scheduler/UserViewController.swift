@@ -12,13 +12,20 @@ class UserViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var aboutButton: UIButton!
     @IBOutlet weak var avatarImageView: UIImageView!
-    
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         decorateButton(logoutButton)
         decorateButton(aboutButton)
+        let user = UserService.currentUser!
+        if user.gender! == "女" {
+            avatarImageView.image = #imageLiteral(resourceName: "girl")
+        } else {
+            avatarImageView.image = #imageLiteral(resourceName: "boy")
+        }
+        nameLabel.text = user.name!
     }
     
     private func decorateButton(_ button:UIButton) {

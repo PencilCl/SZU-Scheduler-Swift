@@ -280,7 +280,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-vj-yFf">
-                                <rect key="frame" x="88" y="190" width="200" height="36"/>
+                                <rect key="frame" x="88" y="219" width="200" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Rdb-yy-sBJ"/>
                                     <constraint firstAttribute="height" constant="36" id="gmV-ag-u2Z"/>
@@ -290,21 +290,32 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BD-tm-ehI">
-                                <rect key="frame" x="87" y="246" width="200" height="36"/>
+                                <rect key="frame" x="87" y="275" width="200" height="36"/>
                                 <state key="normal" title="关于我们">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4I-AF-nev">
+                                <rect key="frame" x="170.5" y="178" width="35" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="AeV-Fi-UrL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GRO-vj-yFf" firstAttribute="centerX" secondItem="bbf-Y9-6Cg" secondAttribute="centerX" id="6Gf-Sn-lXX"/>
                             <constraint firstItem="Rft-f8-Oya" firstAttribute="centerX" secondItem="2BD-tm-ehI" secondAttribute="centerX" id="9VJ-oG-mY3"/>
+                            <constraint firstItem="g4I-AF-nev" firstAttribute="top" secondItem="Rft-f8-Oya" secondAttribute="bottom" constant="8" id="9dA-wu-SMO"/>
                             <constraint firstItem="2BD-tm-ehI" firstAttribute="height" secondItem="GRO-vj-yFf" secondAttribute="height" id="BIS-0b-RAk"/>
+                            <constraint firstItem="g4I-AF-nev" firstAttribute="centerX" secondItem="GRO-vj-yFf" secondAttribute="centerX" id="BUY-Hy-ycO"/>
                             <constraint firstItem="Rft-f8-Oya" firstAttribute="top" secondItem="nhe-Qf-K0X" secondAttribute="bottom" constant="20" id="Was-uA-mwU"/>
+                            <constraint firstItem="GRO-vj-yFf" firstAttribute="top" secondItem="g4I-AF-nev" secondAttribute="bottom" constant="20" id="dDW-8S-rqA"/>
                             <constraint firstItem="2BD-tm-ehI" firstAttribute="width" secondItem="GRO-vj-yFf" secondAttribute="width" id="dXD-ju-3qy"/>
                             <constraint firstItem="Rft-f8-Oya" firstAttribute="centerX" secondItem="bbf-Y9-6Cg" secondAttribute="centerX" id="hRZ-lA-tSo"/>
-                            <constraint firstItem="GRO-vj-yFf" firstAttribute="top" secondItem="Rft-f8-Oya" secondAttribute="bottom" constant="20" id="rss-0o-JeN"/>
                             <constraint firstItem="2BD-tm-ehI" firstAttribute="top" secondItem="GRO-vj-yFf" secondAttribute="bottom" constant="20" id="wK7-Tm-u2q"/>
                         </constraints>
                     </view>
@@ -313,6 +324,7 @@
                         <outlet property="aboutButton" destination="2BD-tm-ehI" id="d6R-Ra-cvn"/>
                         <outlet property="avatarImageView" destination="Rft-f8-Oya" id="o74-1X-VOR"/>
                         <outlet property="logoutButton" destination="GRO-vj-yFf" id="RYt-YW-lIR"/>
+                        <outlet property="nameLabel" destination="g4I-AF-nev" id="3es-ou-zM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNG-F1-aCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
