@@ -17,8 +17,16 @@ public class UserService {
     private static let successUrl = "http://elearning.szu.edu.cn/webapps/portal/frameset.jsp"
     private static let stuNumUrl = "http://elearning.szu.edu.cn/webapps/blackboard/execute/editUser?context=self_modify" // 获取学号url
     private static let stuInfoUrl = "http://pencilsky.cn:9090/api/curriculum/student/?stuNum="
+    private static let entityName = "Student"
     
     static var currentUser: Student?
+    
+    private static var app: AppDelegate = {
+        UIApplication.shared.delegate as! AppDelegate
+    }()
+    private static var context: NSManagedObjectContext = {
+        app.persistentContainer.viewContext
+    }()
     
     public enum OperationError: Error {
         case NotFoundError(String)
@@ -30,12 +38,8 @@ public class UserService {
     // If not found, return nil
     public class func getUserFromUserDefaults() -> Student? {
         let userDefaults = UserDefaults.standard
-        if userDefaults.string(forKey: "stuNum") != nil {
-//            return Student(username: userDefaults.string(forKey: "stuNum")!,
-//                        password: userDefaults.string(forKey: "password")!,
-//                        gender: userDefaults.string(forKey: "gender")! == "男" ? .male : .female,
-//                        stuNum: userDefaults.string(forKey: "stuNum")!,
-//                        name: userDefaults.string(forKey: "name")!)
+        if let username = userDefaults.string(forKey: "username") {
+            return findByUsername(username)
         }
         return nil
     }
@@ -43,18 +47,11 @@ public class UserService {
     public class func saveCurrentUserInfo() {
         let user = currentUser!
         let userDefaults = UserDefaults.standard
-        userDefaults.set(user.stuNum, forKey: "stuNum")
         userDefaults.set(user.username, forKey: "username")
-        userDefaults.set(user.password, forKey: "password")
-        userDefaults.set(user.name, forKey: "name")
-        userDefaults.set(user.gender, forKey: "gender")
+        app.saveContext()
     }
     
     public class func login(username: String, password: String) -> Observable<Student?> {
-        let user = create()
-        user.username = username
-        user.password = password
-        
         return Observable<DataResponse<String>>.create { observer -> Disposable in
             Alamofire.request("https://authserver.szu.edu.cn/authserver/login?service=https%3a%2f%2fauth.szu.edu.cn%2fcas.aspx%2flogin%3fservice%3dhttp%3a%2f%2felearning.szu.edu.cn%2fwebapps%2fcbb-sdgxtyM-BBLEARN%2fgetuserid.jsp")
                 .responseString { response in
@@ -75,15 +72,15 @@ public class UserService {
             }
             return ""
         }.flatMap {
-            postLogin(user: user, html: $0)
+            postLogin(username: username, password: password, html: $0)
         }.flatMap { (_) -> Observable<Student?> in
-            getUserInfo(user: user)
+            getUserInfo(username: username, password: password)
         }
     }
     
     // Getting student number、name and gender
     // Note: Need ensuring login
-    public class func getUserInfo(user: Student) -> Observable<Student?> {
+    public class func getUserInfo(username: String, password: String) -> Observable<Student?> {
         return Observable<String>.create { observer -> Disposable in
             Alamofire.request(stuNumUrl)
                 .responseString { response in
@@ -115,9 +112,16 @@ public class UserService {
                                 let data = json["data"] as? [String: AnyObject],
                                 let name = data["name"] as? String,
                                 let gender = data["sex"] as? String {
+                                
+                                let user = create()
+                                user.username = username
+                                user.password = password
                                 user.stuNum = stuNum
                                 user.name = name
                                 user.gender = gender
+                                
+                                currentUser = user
+                                saveCurrentUserInfo()
                                 observer.onNext(user)
                             } else {
                                 observer.onError(OperationError.RequestError("获取学号信息失败"))
@@ -131,7 +135,7 @@ public class UserService {
         }
     }
     
-    private class func postLogin(user: Student, html: String?) -> Observable<Void> {
+    private class func postLogin(username: String, password: String, html: String?) -> Observable<Void> {
         return Observable<Void>.create({ observer -> Disposable in
             if html == nil {
                 observer.onNext()
@@ -142,9 +146,10 @@ public class UserService {
                     "_eventId": "submit",
                     "dllt": "userNamePasswordLogin",
                     "rmShown": "1",
-                    "username": user.username!,
-                    "password": user.password!
+                    "username": username,
+                    "password": password
                 ]
+                print(params)
                 Alamofire.request("https://authserver.szu.edu.cn/authserver/login?service=https%3a%2f%2fauth.szu.edu.cn%2fcas.aspx%2flogin%3fservice%3dhttp%3a%2f%2felearning.szu.edu.cn%2fwebapps%2fcbb-sdgxtyM-BBLEARN%2fgetuserid.jsp", method: .post, parameters: params)
                     .responseString { response in
                         switch response.result {
@@ -197,10 +202,17 @@ public class UserService {
     }
     
     private class func create() -> Student {
-        let app = UIApplication.shared.delegate as! AppDelegate
-        let context = app.persistentContainer.viewContext
-        
-        return NSEntityDescription.insertNewObject(forEntityName: "Student", into: context) as! Student
+        return NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! Student
+    }
+    
+    private class func findByUsername(_ username: String) -> Student? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.predicate = NSPredicate.init(format: "username = %@", NSString(string: username))
+        if let fetchedObjects = try? context.fetch(fetchRequest) as! [Student],
+            fetchedObjects.count > 0 {
+            return fetchedObjects[0]
+        }
+        return nil
     }
     
 }

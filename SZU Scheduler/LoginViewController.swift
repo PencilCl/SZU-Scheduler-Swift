@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     @IBOutlet weak var account: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         let layer = loginButton.layer
@@ -20,25 +22,20 @@ class ViewController: UIViewController {
         layer.cornerRadius = 5
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        // 用户已登录则直接加载主界面
-        if let user = UserService.getUserFromUserDefaults() {
-            UserService.currentUser = user
-            performSegue(withIdentifier: "login", sender: nil)
-            return
-        }
-    }
-    
     @IBAction func login(_ sender: UIButton) {
         if let username = account.text, let pass = password.text,
             !username.isEmpty, !pass.isEmpty {
+            loadingIndicator.startAnimating()
+            loginButton.isUserInteractionEnabled = false
+            loginButton.alpha = 0.4
             UserService.login(username: username, password: pass)
                 .subscribe { [weak self] event in
+                    self?.loadingIndicator.stopAnimating()
+                    self?.loginButton.isUserInteractionEnabled = true
+                    self?.loginButton.alpha = 1
                     switch event {
                     case .next(_):
-                        if let user = event.element {
-                            UserService.currentUser = user
-                            UserService.saveCurrentUserInfo()
+                        if event.element != nil {
                             self?.performSegue(withIdentifier: "login", sender: nil)
                         } else {
                             self?.present(CommonUtil.getErrorAlertController(message: "获取用户信息失败"), animated: true, completion: nil)
