@@ -14,13 +14,11 @@ class HomeViewController: UIViewController,
     UICollectionViewDelegateFlowLayout,
     ModuleCollectionViewCellDelegate {
 
-    var moduleList: [Module] = []
-//    [
-//        Module(name: "Blackboard", color: 0x9ccc65, show: true),
-//        Module(name: "图书馆", color: 0xff7043, show: true),
-//        Module(name: "Gobye", color: 0x29b6f6, show: true),
-//        Module(name: "课程表", color: 0x5c6bc0, show: true)
-//    ]
+    var moduleList: [Module] {
+        get {
+            return ModuleService.moduleList
+        }
+    }
     
     @IBOutlet weak var moduleCollectionView: UICollectionView!
     
@@ -44,6 +42,8 @@ class HomeViewController: UIViewController,
         
         navigationController?.showHireLine()
         navigationController?.navigationBar.barTintColor = 0x5677FC.uiColor
+        
+        moduleCollectionView.reloadData()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -51,13 +51,30 @@ class HomeViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return moduleList.count
+        var number = 0
+        moduleList.forEach { module in
+            if module.show {
+                number += 1
+            }
+        }
+        return number
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = moduleCollectionView.dequeueReusableCell(withReuseIdentifier: "module", for: indexPath) as! ModuleCollectionViewCell
         cell.delegate = self
-        cell.module = moduleList[indexPath.row]
+        
+        var count = 0
+        for i in 0..<moduleList.count {
+            if moduleList[i].show {
+                if count == indexPath.row {
+                    cell.module = moduleList[i]
+                    break
+                }
+                count += 1
+            }
+        }
+        
         return cell
     }
     
@@ -88,14 +105,6 @@ class HomeViewController: UIViewController,
             default:
                 break
             }
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier,
-            identifier == "moduleControl" {
-            let moduleControlVC = segue.destination as! ModuleControlViewController
-            moduleControlVC.module = moduleList
         }
     }
     

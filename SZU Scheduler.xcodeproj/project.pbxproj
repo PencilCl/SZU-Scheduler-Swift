@@ -13,6 +13,7 @@
 		9735CEB31F26206E00771566 /* ModuleControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735CEB21F26206E00771566 /* ModuleControlViewController.swift */; };
 		9735CEB51F2622AA00771566 /* ModuleControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9735CEB41F2622AA00771566 /* ModuleControlTableViewCell.swift */; };
 		9756E6A21F31B00A0063EF72 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756E6A11F31B0090063EF72 /* LaunchViewController.swift */; };
+		9756E6A41F31B1E00063EF72 /* ModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9756E6A31F31B1E00063EF72 /* ModuleService.swift */; };
 		9769DCE21F2CC76400CBE202 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DCE11F2CC76400CBE202 /* UserService.swift */; };
 		9769DCE61F2EC32D00CBE202 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DCE51F2EC32D00CBE202 /* CommonUtil.swift */; };
 		9769DCEA1F2F8CD300CBE202 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9769DCE91F2F8CD300CBE202 /* CoreData.framework */; };
@@ -64,6 +65,7 @@
 		9735CEB21F26206E00771566 /* ModuleControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleControlViewController.swift; sourceTree = "<group>"; };
 		9735CEB41F2622AA00771566 /* ModuleControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleControlTableViewCell.swift; sourceTree = "<group>"; };
 		9756E6A11F31B0090063EF72 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		9756E6A31F31B1E00063EF72 /* ModuleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleService.swift; sourceTree = "<group>"; };
 		9769DCE11F2CC76400CBE202 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9769DCE51F2EC32D00CBE202 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		9769DCE91F2F8CD300CBE202 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				9769DCE11F2CC76400CBE202 /* UserService.swift */,
+				9756E6A31F31B1E00063EF72 /* ModuleService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */,
 				97C3F4B21F2B99BB00F1C4DB /* TodoTableViewCell.swift in Sources */,
 				9769DD461F306D5F00CBE202 /* Attachment+CoreDataProperties.swift in Sources */,
+				9756E6A41F31B1E00063EF72 /* ModuleService.swift in Sources */,
 				9769DD3D1F306D5F00CBE202 /* Lesson+CoreDataClass.swift in Sources */,
 				97C3F4A61F2B8C0800F1C4DB /* ScheduleViewController.swift in Sources */,
 				9769DCE61F2EC32D00CBE202 /* CommonUtil.swift in Sources */,

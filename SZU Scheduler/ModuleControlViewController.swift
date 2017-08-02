@@ -12,7 +12,6 @@ class ModuleControlViewController: UIViewController,
     UITableViewDelegate,
     UITableViewDataSource {
     
-    var module: [Module]?
     var lastNavigationBarColor: UIColor!
 
     @IBOutlet weak var moduleTableView: UITableView! {
@@ -35,6 +34,9 @@ class ModuleControlViewController: UIViewController,
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // 保存变化
+        let app = UIApplication.shared.delegate as! AppDelegate
+        app.saveContext()
         
         // 恢复状态栏颜色
         if let navigationBar = navigationController?.navigationBar {
@@ -47,13 +49,13 @@ class ModuleControlViewController: UIViewController,
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return module == nil ? 0 : module!.count
+        return ModuleService.moduleList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = moduleTableView.dequeueReusableCell(withIdentifier: "moduleControl", for: indexPath) as! ModuleControlTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.none // Set cell cannot be selected
-        cell.module = module?[indexPath.row]
+        cell.module = ModuleService.moduleList[indexPath.row]
         return cell
     }
 
