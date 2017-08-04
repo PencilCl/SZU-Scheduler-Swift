@@ -23,7 +23,12 @@ class HomeworkTableViewCell: UITableViewCell {
         if let homework = homework {
             homeworkNameLabel.text = homework.homeworkName
             subjectNameLabel.text = homework.subject!.subjectName
-            optionalInfoLabel.text = "截止日期:" + homework.deadline!.format()
+            
+            if homework.finished {
+                optionalInfoLabel.text = "得分: " + (homework.score == -1 ? "待批改" : String(homework.score))
+            } else {
+                optionalInfoLabel.text = "截止日期: " + (homework.deadline?.format() ?? "无")
+            }
         }
     }
 }

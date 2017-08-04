@@ -21,19 +21,6 @@ public class UserService {
     
     static var currentUser: Student?
     
-    private static var app: AppDelegate = {
-        UIApplication.shared.delegate as! AppDelegate
-    }()
-    private static var context: NSManagedObjectContext = {
-        app.persistentContainer.viewContext
-    }()
-    
-    public enum OperationError: Error {
-        case NotFoundError(String)
-        case RequestError(String)
-        case AuthError(String)
-    }
-    
     // Getting user info from userDefaults
     // If not found, return nil
     public class func getUserFromUserDefaults() -> Student? {
@@ -48,10 +35,11 @@ public class UserService {
         let user = currentUser!
         let userDefaults = UserDefaults.standard
         userDefaults.set(user.username, forKey: "username")
-        app.saveContext()
+        CommonUtil.app.saveContext()
     }
     
-    public class func login(username: String, password: String) -> Observable<Student?> {
+    // Login but don't get user info
+    private class func loginOnly(_ username: String, _ password: String) -> Observable<Void> {
         return Observable<DataResponse<String>>.create { observer -> Disposable in
             Alamofire.request("https://authserver.szu.edu.cn/authserver/login?service=https%3a%2f%2fauth.szu.edu.cn%2fcas.aspx%2flogin%3fservice%3dhttp%3a%2f%2felearning.szu.edu.cn%2fwebapps%2fcbb-sdgxtyM-BBLEARN%2fgetuserid.jsp")
                 .responseString { response in
@@ -59,7 +47,7 @@ public class UserService {
                     case .success(_):
                         observer.onNext(response)
                     case .failure(_):
-                        observer.onError(OperationError.RequestError("获取登录信息失败"))
+                        observer.onError(MsgError("获取登录信息失败"))
                     }
                 }
             return Disposables.create { }
@@ -73,7 +61,16 @@ public class UserService {
             return ""
         }.flatMap {
             postLogin(username: username, password: password, html: $0)
-        }.flatMap { (_) -> Observable<Student?> in
+        }
+    }
+    
+    public class func loginCurrentUser() -> Observable<Void> {
+        let user = currentUser!
+        return loginOnly(user.username!, user.password!)
+    }
+    
+    public class func login(username: String, password: String) -> Observable<Student?> {
+        return loginOnly(username, password).flatMap { (_) -> Observable<Student?> in
             getUserInfo(username: username, password: password)
         }
     }
@@ -90,13 +87,13 @@ public class UserService {
                             if let stuNum = getStuNum(html) {
                                 observer.onNext(stuNum)
                             } else {
-                                observer.onError(OperationError.NotFoundError("获取学号信息失败"))
+                                observer.onError(MsgError("获取学号信息失败"))
                             }
                         } else {
-                            observer.onError(OperationError.RequestError("获取学号页面信息失败"))
+                            observer.onError(MsgError("获取学号页面信息失败"))
                         }
                     case .failure(_):
-                        observer.onError(OperationError.RequestError("请求学号页面失败"))
+                        observer.onError(MsgError("请求学号页面失败"))
                     }
             }
             return Disposables.create { }
@@ -124,10 +121,10 @@ public class UserService {
                                 saveCurrentUserInfo()
                                 observer.onNext(user)
                             } else {
-                                observer.onError(OperationError.RequestError("获取学号信息失败"))
+                                observer.onError(MsgError("获取学号信息失败"))
                             }
                         case .failure(_):
-                            observer.onError(OperationError.RequestError("请求获取学号失败"))
+                            observer.onError(MsgError("请求获取学号失败"))
                         }
                 }
                 return Disposables.create { }
@@ -149,7 +146,6 @@ public class UserService {
                     "username": username,
                     "password": password
                 ]
-                print(params)
                 Alamofire.request("https://authserver.szu.edu.cn/authserver/login?service=https%3a%2f%2fauth.szu.edu.cn%2fcas.aspx%2flogin%3fservice%3dhttp%3a%2f%2felearning.szu.edu.cn%2fwebapps%2fcbb-sdgxtyM-BBLEARN%2fgetuserid.jsp", method: .post, parameters: params)
                     .responseString { response in
                         switch response.result {
@@ -158,12 +154,12 @@ public class UserService {
                                 observer.onNext()
                             } else if let html = response.result.value,
                                 let errorMsg = getLoginError(html) {
-                                observer.onError(OperationError.AuthError(errorMsg))
+                                observer.onError(MsgError(errorMsg))
                             } else {
-                                observer.onError(OperationError.RequestError("登录失败,请重试"))
+                                observer.onError(MsgError("登录失败,请重试"))
                             }
                         case .failure(_):
-                            observer.onError(OperationError.RequestError("请求登录失败"))
+                            observer.onError(MsgError("请求登录失败"))
                         }
                 }
             }
@@ -172,43 +168,30 @@ public class UserService {
     }
     
     private class func getStuNum(_ html: String) -> String? {
-        let pattern = "<input.*id=\"studentId\".*value=\"(.*?)\".*/>"
-        let regex = try! NSRegularExpression(pattern: pattern, options: .init(rawValue: 0))
-        let res = regex.matches(in: html, options: .init(rawValue: 0), range: NSMakeRange(0, html.characters.count))
-        if res.count > 0 {
-            return (html as NSString).substring(with: res[0].rangeAt(1))
-        }
-        return nil
+        return findFirstString(pattern: "<input.*id=\"studentId\".*value=\"(.*?)\".*/>", from: html)
     }
     
     private class func getInputValueByName(_ html: String, name: String) -> String? {
-        let pattern = "<input type=\"hidden\" name=\"\(name)\" value=\"(.*)?\"/>"
-        let regex = try! NSRegularExpression(pattern: pattern, options: .init(rawValue: 0))
-        let res = regex.matches(in: html, options: .init(rawValue: 0), range: NSMakeRange(0, html.characters.count))
-        if res.count > 0 {
-            return (html as NSString).substring(with: res[0].rangeAt(1))
-        }
-        return nil
+        return findFirstString(pattern: "<input type=\"hidden\" name=\"\(name)\" value=\"(.*)?\"/>", from: html)
     }
     
     private class func getLoginError(_ html: String) -> String? {
-        let pattern = "<span id=\"msg\" class=\"auth_error\" style=\"top:-19px;\">(.*)?</span>"
-        let regex = try! NSRegularExpression(pattern: pattern, options: .init(rawValue: 0))
-        let res = regex.matches(in: html, options: .init(rawValue: 0), range: NSMakeRange(0, html.characters.count))
-        if res.count > 0 {
-            return (html as NSString).substring(with: res[0].rangeAt(1))
-        }
-        return nil
+        return findFirstString(pattern: "<span id=\"msg\" class=\"auth_error\" style=\"top:-19px;\">(.*)?</span>", from: html)
+    }
+    
+    private class func findFirstString(pattern: String, from str: String) -> String? {
+        let res = try! RegExUtil.matchs(pattern: pattern, from: str)
+        return res.count > 0 ? str.substring(with: res[0].rangeAt(1)) : nil
     }
     
     private class func create() -> Student {
-        return NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! Student
+        return NSEntityDescription.insertNewObject(forEntityName: entityName, into: CommonUtil.context) as! Student
     }
     
     private class func findByUsername(_ username: String) -> Student? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         fetchRequest.predicate = NSPredicate.init(format: "username = %@", NSString(string: username))
-        if let fetchedObjects = try? context.fetch(fetchRequest) as! [Student],
+        if let fetchedObjects = try? CommonUtil.context.fetch(fetchRequest) as! [Student],
             fetchedObjects.count > 0 {
             return fetchedObjects[0]
         }

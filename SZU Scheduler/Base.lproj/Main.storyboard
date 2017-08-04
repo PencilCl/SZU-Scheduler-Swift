@@ -701,7 +701,6 @@
                                             <outlet property="homeworkNameLabel" destination="Jgx-Iw-qEM" id="uuQ-Kh-zwF"/>
                                             <outlet property="optionalInfoLabel" destination="1Fu-8n-Y1k" id="hFZ-3O-uxa"/>
                                             <outlet property="subjectNameLabel" destination="zQL-ys-GTW" id="BZY-S4-TNB"/>
-                                            <segue destination="9Hz-xr-7ll" kind="show" id="20L-br-ZmQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -717,6 +716,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="gGE-Ku-CCG" id="xOT-bs-cMJ"/>
+                        <segue destination="9Hz-xr-7ll" kind="show" identifier="homeworkDetail" id="4Ru-pt-KCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8i-HZ-PBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -726,7 +726,7 @@
         <!--作业详情-->
         <scene sceneID="gnX-LF-bZY">
             <objects>
-                <viewController title="作业详情" automaticallyAdjustsScrollViewInsets="NO" id="9Hz-xr-7ll" sceneMemberID="viewController">
+                <viewController title="作业详情" automaticallyAdjustsScrollViewInsets="NO" id="9Hz-xr-7ll" customClass="HomeworkDetailViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eIs-tH-aOO"/>
                         <viewControllerLayoutGuide type="bottom" id="laG-5C-Mf8"/>
@@ -747,11 +747,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作业描述" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yI-aF-3oX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yI-aF-3oX">
                                         <rect key="frame" x="8" y="49" width="359" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="作业描述">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="截止日期：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRQ-Q0-8k5">
                                         <rect key="frame" x="8" y="136" width="359" height="21"/>
@@ -765,10 +772,22 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="附件1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-6g-JYN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-6g-JYN">
                                         <rect key="frame" x="8" y="107" width="359" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.55969859440000003" green="0.69293755170000004" blue="0.4005010128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="附件">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.5607843137254902" green="0.69411764705882351" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="1">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.5607843137254902" green="0.69411764705882351" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="得分：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvQ-Ot-jIe">
@@ -810,6 +829,13 @@
                             <constraint firstItem="NEn-3K-H6F" firstAttribute="bottom" secondItem="laG-5C-Mf8" secondAttribute="top" id="wA2-MS-L9U"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="attachmentsLabel" destination="FcV-6g-JYN" id="lX1-NB-K56"/>
+                        <outlet property="deadlineLabel" destination="mRQ-Q0-8k5" id="jH3-8E-NwH"/>
+                        <outlet property="detailLabel" destination="4yI-aF-3oX" id="C6f-qR-H8q"/>
+                        <outlet property="nameLabel" destination="n6J-mq-MII" id="Fzx-Mk-iRk"/>
+                        <outlet property="scoreLabel" destination="CvQ-Ot-jIe" id="Bxb-HW-uv2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgj-8c-LKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1015,9 +1041,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="P8f-Hp-h4u" kind="show" id="1wd-Rc-seZ"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1032,6 +1055,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="0Bl-8h-yW0" id="8gH-a4-bYb"/>
+                        <segue destination="P8f-Hp-h4u" kind="show" identifier="homework" id="L1i-Y3-Pdc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIl-lp-y1H" userLabel="First Responder" sceneMemberID="firstResponder"/>

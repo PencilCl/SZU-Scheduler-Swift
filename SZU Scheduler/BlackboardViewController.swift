@@ -82,7 +82,9 @@ class BlackboardViewController: UIViewController {
         pageViewController = self.childViewControllers.first as! UIPageViewController
         pageViewController.delegate = self
         unfinishedHomeworkController = storyboard?.instantiateViewController(withIdentifier: "UnfinishedHomeworkControllerID") as! HomeworkViewController
+        unfinishedHomeworkController.homeworkArray = filterUnfinishedHomework()
         subjectController = storyboard?.instantiateViewController(withIdentifier: "SubjectControllerID") as! SubjectTableViewController
+        subjectController.subjects = UserService.currentUser!.subjects
         
         pageViewController.dataSource = self
         pageViewController?.setViewControllers([unfinishedHomeworkController], direction: .forward, animated: true, completion: nil)
@@ -95,6 +97,22 @@ class BlackboardViewController: UIViewController {
         // 代码中设置按钮背景颜色 storyboard中设置有色差
         subjectButton.backgroundColor = moduleColor
         unfinishedHomeworkButton.backgroundColor = moduleColor
+    }
+    
+    private func filterUnfinishedHomework() -> [Homework] {
+        var res = [Homework]()
+        if let subjects = UserService.currentUser!.subjects {
+            for subject in (subjects.allObjects as! [Subject]) {
+                if let homeworks = subject.homeworks {
+                    for homework in (homeworks.allObjects as! [Homework]) {
+                        if !homework.finished {
+                            res.append(homework)
+                        }
+                    }
+                }
+            }
+        }
+        return res
     }
     
     @IBOutlet weak var unfinishedHomeworkButton: UIButton!

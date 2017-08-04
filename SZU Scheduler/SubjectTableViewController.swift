@@ -12,7 +12,7 @@ class SubjectTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var subjectArray: [Subject]? {
+    var subjects: NSSet? {
         didSet {
             tableView?.reloadData()
         }
@@ -24,7 +24,15 @@ class SubjectTableViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier,
+            id == "homework",
+            let subject = sender as? Subject {
+            let cv = segue.destination as! HomeworkViewController
+            cv.homeworkArray = subject.homeworks?.allObjects as? [Homework]
+        }
+    }
 }
 
 extension SubjectTableViewController: UITableViewDataSource, UITableViewDelegate {
@@ -33,7 +41,7 @@ extension SubjectTableViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjectArray == nil ? 0 : subjectArray!.count
+        return (subjects?.count) ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -42,11 +50,17 @@ extension SubjectTableViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subject", for: indexPath)
-        if let subject = subjectArray?[indexPath.row] {
+        if let subject = subjects?.allObjects[indexPath.row] as? Subject {
             cell.textLabel?.text = subject.subjectName
             cell.detailTextLabel?.text = "有新动态"
-            cell.selectionStyle = .none
         }
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let subject = subjects?.allObjects[indexPath.row] as? Subject {
+            performSegue(withIdentifier: "homework", sender: subject)
+        }
     }
 }

@@ -23,6 +23,14 @@ class HomeworkViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier,
+            id == "homeworkDetail" {
+            let cv = segue.destination as! HomeworkDetailViewController
+            cv.homework = (sender as! Homework)
+        }
+    }
 }
 
 extension HomeworkViewController: UITableViewDataSource, UITableViewDelegate {
@@ -43,5 +51,9 @@ extension HomeworkViewController: UITableViewDataSource, UITableViewDelegate {
         cell.homework = homeworkArray?[indexPath.row]
         cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "homeworkDetail", sender: homeworkArray?[indexPath.row])
     }
 }

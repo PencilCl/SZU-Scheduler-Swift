@@ -36,17 +36,15 @@ class LoginViewController: UIViewController {
                     switch event {
                     case .next(_):
                         if event.element != nil {
+                            BlackboardService.refreshSubject()
                             self?.performSegue(withIdentifier: "login", sender: nil)
                         } else {
                             self?.present(CommonUtil.getErrorAlertController(message: "获取用户信息失败"), animated: true, completion: nil)
                         }
                     case .error(let error):
                         var errorMsg = "发生未知错误"
-                        if let e = error as? UserService.OperationError {
-                            switch e {
-                            case .AuthError(let msg), .RequestError(let msg), .NotFoundError(let msg):
-                                errorMsg = msg
-                            }
+                        if let e = error as? MsgError {
+                            errorMsg = e.msg
                         }
                         self?.present(CommonUtil.getErrorAlertController(message: errorMsg), animated: true, completion: nil)
                     default:
