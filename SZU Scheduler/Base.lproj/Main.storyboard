@@ -761,7 +761,7 @@
                                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="截止日期：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRQ-Q0-8k5">
-                                        <rect key="frame" x="8" y="136" width="359" height="21"/>
+                                        <rect key="frame" x="8" y="146.5" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -772,49 +772,38 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-6g-JYN">
-                                        <rect key="frame" x="8" y="107" width="359" height="21"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="附件">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.5607843137254902" green="0.69411764705882351" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="1">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.5607843137254902" green="0.69411764705882351" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="得分：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvQ-Ot-jIe">
-                                        <rect key="frame" x="8" y="165" width="359" height="21"/>
+                                        <rect key="frame" x="8" y="175.5" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vsb-UB-O9g">
+                                        <rect key="frame" x="8" y="102" width="359" height="36.5"/>
+                                        <color key="tintColor" red="0.56078431370000004" green="0.69411764710000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Vsb-UB-O9g" firstAttribute="trailing" secondItem="mRQ-Q0-8k5" secondAttribute="trailing" id="23e-Dr-H78"/>
+                                    <constraint firstItem="Vsb-UB-O9g" firstAttribute="leading" secondItem="mRQ-Q0-8k5" secondAttribute="leading" id="2cw-If-wCB"/>
                                     <constraint firstItem="4yI-aF-3oX" firstAttribute="top" secondItem="n6J-mq-MII" secondAttribute="bottom" constant="8" id="CnY-v6-9n6"/>
                                     <constraint firstItem="4yI-aF-3oX" firstAttribute="leading" secondItem="n6J-mq-MII" secondAttribute="leading" id="FmL-82-j5G"/>
-                                    <constraint firstItem="mRQ-Q0-8k5" firstAttribute="top" secondItem="FcV-6g-JYN" secondAttribute="bottom" constant="8" id="JNT-lg-FRm"/>
                                     <constraint firstItem="RVV-us-58o" firstAttribute="leading" secondItem="4yI-aF-3oX" secondAttribute="leading" id="Kmc-3K-sgx"/>
+                                    <constraint firstItem="mRQ-Q0-8k5" firstAttribute="top" secondItem="Vsb-UB-O9g" secondAttribute="bottom" constant="8" id="LOc-sd-KzA"/>
+                                    <constraint firstItem="Vsb-UB-O9g" firstAttribute="leading" secondItem="RVV-us-58o" secondAttribute="leading" id="Lwl-hN-PCa"/>
                                     <constraint firstItem="4yI-aF-3oX" firstAttribute="trailing" secondItem="n6J-mq-MII" secondAttribute="trailing" id="Mac-Xy-buS"/>
                                     <constraint firstItem="n6J-mq-MII" firstAttribute="trailing" secondItem="NEn-3K-H6F" secondAttribute="trailingMargin" id="Po7-TZ-B9Q"/>
                                     <constraint firstItem="CvQ-Ot-jIe" firstAttribute="top" secondItem="mRQ-Q0-8k5" secondAttribute="bottom" constant="8" id="S4t-6T-mg6"/>
                                     <constraint firstItem="n6J-mq-MII" firstAttribute="top" secondItem="NEn-3K-H6F" secondAttribute="topMargin" id="SYl-pH-O0E"/>
+                                    <constraint firstItem="Vsb-UB-O9g" firstAttribute="trailing" secondItem="RVV-us-58o" secondAttribute="trailing" id="XgY-2p-ENl"/>
                                     <constraint firstItem="n6J-mq-MII" firstAttribute="centerX" secondItem="NEn-3K-H6F" secondAttribute="centerX" id="cCC-HW-Ip2"/>
                                     <constraint firstItem="CvQ-Ot-jIe" firstAttribute="leading" secondItem="mRQ-Q0-8k5" secondAttribute="leading" id="fqf-DQ-6kd"/>
-                                    <constraint firstItem="mRQ-Q0-8k5" firstAttribute="trailing" secondItem="FcV-6g-JYN" secondAttribute="trailing" id="gLi-9g-B0E"/>
-                                    <constraint firstItem="mRQ-Q0-8k5" firstAttribute="leading" secondItem="FcV-6g-JYN" secondAttribute="leading" id="piP-9B-Vrb"/>
                                     <constraint firstItem="n6J-mq-MII" firstAttribute="leading" secondItem="NEn-3K-H6F" secondAttribute="leadingMargin" id="pyl-eg-aF3"/>
                                     <constraint firstItem="RVV-us-58o" firstAttribute="top" secondItem="4yI-aF-3oX" secondAttribute="bottom" constant="8" id="qxC-zg-Hxx"/>
-                                    <constraint firstItem="FcV-6g-JYN" firstAttribute="top" secondItem="RVV-us-58o" secondAttribute="bottom" constant="8" id="rsp-R4-07j"/>
-                                    <constraint firstItem="FcV-6g-JYN" firstAttribute="trailing" secondItem="RVV-us-58o" secondAttribute="trailing" id="sNz-Om-yoy"/>
-                                    <constraint firstItem="FcV-6g-JYN" firstAttribute="leading" secondItem="RVV-us-58o" secondAttribute="leading" id="uQs-VV-H7e"/>
+                                    <constraint firstItem="Vsb-UB-O9g" firstAttribute="top" secondItem="RVV-us-58o" secondAttribute="bottom" constant="3" id="wIP-Fd-yQD"/>
                                     <constraint firstItem="RVV-us-58o" firstAttribute="trailing" secondItem="4yI-aF-3oX" secondAttribute="trailing" id="wUa-Xv-1h1"/>
                                     <constraint firstAttribute="bottom" secondItem="CvQ-Ot-jIe" secondAttribute="bottom" constant="20" id="zhL-T7-a93"/>
                                     <constraint firstItem="CvQ-Ot-jIe" firstAttribute="trailing" secondItem="mRQ-Q0-8k5" secondAttribute="trailing" id="zqd-Ne-Wgr"/>
@@ -830,7 +819,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="attachmentsLabel" destination="FcV-6g-JYN" id="lX1-NB-K56"/>
+                        <outlet property="attachmentsTextView" destination="Vsb-UB-O9g" id="OFq-i9-Xp9"/>
                         <outlet property="deadlineLabel" destination="mRQ-Q0-8k5" id="jH3-8E-NwH"/>
                         <outlet property="detailLabel" destination="4yI-aF-3oX" id="C6f-qR-H8q"/>
                         <outlet property="nameLabel" destination="n6J-mq-MII" id="Fzx-Mk-iRk"/>
@@ -839,7 +828,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgj-8c-LKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2777" y="-2780"/>
+            <point key="canvasLocation" x="2776.8000000000002" y="-2780.0599700149928"/>
         </scene>
         <!--模块管理-->
         <scene sceneID="DHx-LH-lPU">
