@@ -288,12 +288,18 @@
                                 <state key="normal" title="退出登录">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="logout:" destination="JP2-5r-2d4" eventType="touchUpInside" id="jEv-jx-AoW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BD-tm-ehI">
                                 <rect key="frame" x="87" y="275" width="200" height="36"/>
                                 <state key="normal" title="关于我们">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Kco-7M-toB" kind="show" id="hHR-OR-aQp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4I-AF-nev">
                                 <rect key="frame" x="170.5" y="178" width="35" height="21"/>
@@ -323,13 +329,76 @@
                     <connections>
                         <outlet property="aboutButton" destination="2BD-tm-ehI" id="d6R-Ra-cvn"/>
                         <outlet property="avatarImageView" destination="Rft-f8-Oya" id="o74-1X-VOR"/>
-                        <outlet property="logoutButton" destination="GRO-vj-yFf" id="RYt-YW-lIR"/>
+                        <outlet property="logoutButton" destination="GRO-vj-yFf" id="WkM-yq-znL"/>
                         <outlet property="nameLabel" destination="g4I-AF-nev" id="3es-ou-zM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNG-F1-aCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2856.8000000000002" y="791.15442278860576"/>
+        </scene>
+        <!--关于我们-->
+        <scene sceneID="Ar5-NO-0nU">
+            <objects>
+                <viewController title="关于我们" id="Kco-7M-toB" customClass="AboutViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FkK-Tp-LN3"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Db-KK-OlT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NOJ-i0-HuZ">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入您想要发送的消息" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx1-3s-ipG">
+                                <rect key="frame" x="21" y="26" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FMZ-E0-ef1">
+                                <rect key="frame" x="16" y="20" width="343" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="BHd-SQ-ZIG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yS-Cz-ihq">
+                                <rect key="frame" x="16" y="169" width="343" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="GJ3-QI-DlV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="提交">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="commit:" destination="Kco-7M-toB" eventType="touchUpInside" id="q43-uQ-QFO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="FMZ-E0-ef1" secondAttribute="trailing" id="BDH-wP-4Lf"/>
+                            <constraint firstItem="8yS-Cz-ihq" firstAttribute="leading" secondItem="FMZ-E0-ef1" secondAttribute="leading" id="Hig-XM-j2o"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="FMZ-E0-ef1" secondAttribute="leading" id="KaI-cA-Nq7"/>
+                            <constraint firstItem="Hx1-3s-ipG" firstAttribute="top" secondItem="FMZ-E0-ef1" secondAttribute="top" constant="6" id="Kgc-kd-oG2"/>
+                            <constraint firstItem="8yS-Cz-ihq" firstAttribute="top" secondItem="FMZ-E0-ef1" secondAttribute="bottom" constant="8" id="dDY-Sr-4cr"/>
+                            <constraint firstItem="FMZ-E0-ef1" firstAttribute="top" secondItem="FkK-Tp-LN3" secondAttribute="bottom" constant="20" id="dcA-6K-CG5"/>
+                            <constraint firstItem="Hx1-3s-ipG" firstAttribute="width" secondItem="FMZ-E0-ef1" secondAttribute="width" id="khr-Wh-ljj"/>
+                            <constraint firstItem="8yS-Cz-ihq" firstAttribute="width" secondItem="FMZ-E0-ef1" secondAttribute="width" id="lMl-98-0Oe"/>
+                            <constraint firstItem="Hx1-3s-ipG" firstAttribute="leading" secondItem="FMZ-E0-ef1" secondAttribute="leading" constant="5" id="tD4-rT-CT2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commitButton" destination="8yS-Cz-ihq" id="l8D-gF-N16"/>
+                        <outlet property="feedbackTextView" destination="FMZ-E0-ef1" id="glC-xC-0Il"/>
+                        <outlet property="placeholderLabel" destination="Hx1-3s-ipG" id="hqP-9J-dS5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v0i-zJ-mxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3725.5999999999999" y="791.15442278860576"/>
         </scene>
         <!--荔荔在目-->
         <scene sceneID="7Zn-yS-rOI">

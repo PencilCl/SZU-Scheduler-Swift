@@ -51,6 +51,8 @@
 		97D41EF91F345F0E0028C2E1 /* HomeworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EF81F345F0E0028C2E1 /* HomeworkDetailViewController.swift */; };
 		97D41EFB1F355CF10028C2E1 /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EFA1F355CF10028C2E1 /* LibraryService.swift */; };
 		97D41EFD1F3616BD0028C2E1 /* CurriculumScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EFC1F3616BD0028C2E1 /* CurriculumScheduleService.swift */; };
+		97D41F011F3628A00028C2E1 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41F001F3628A00028C2E1 /* UIButtonExtension.swift */; };
+		97D41F031F362DFD0028C2E1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41F021F362DFD0028C2E1 /* AboutViewController.swift */; };
 		97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF71F27945400059687 /* BlackboardViewController.swift */; };
 		97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF91F27A59900059687 /* HomeworkViewController.swift */; };
 		97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */; };
@@ -112,6 +114,8 @@
 		97D41EF81F345F0E0028C2E1 /* HomeworkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkDetailViewController.swift; sourceTree = "<group>"; };
 		97D41EFA1F355CF10028C2E1 /* LibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
 		97D41EFC1F3616BD0028C2E1 /* CurriculumScheduleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumScheduleService.swift; sourceTree = "<group>"; };
+		97D41F001F3628A00028C2E1 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		97D41F021F362DFD0028C2E1 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		97EF2FF71F27945400059687 /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
 		97EF2FF91F27A59900059687 /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
 		97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 				977D8D0B1F13102D00862493 /* Main.storyboard */,
 				9769DCEB1F2F8CF100CBE202 /* SZUScheduler.xcdatamodeld */,
 				9756E6A11F31B0090063EF72 /* LaunchViewController.swift */,
+				97D41F021F362DFD0028C2E1 /* AboutViewController.swift */,
 			);
 			path = "SZU Scheduler";
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				97EF30151F29CEB800059687 /* DateExtension.swift */,
 				9769DD2D1F3064A600CBE202 /* IntExtension.swift */,
 				97D41EF21F32B5940028C2E1 /* StringExtension.swift */,
+				97D41F001F3628A00028C2E1 /* UIButtonExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -475,9 +481,11 @@
 				9769DD441F306D5F00CBE202 /* Homework+CoreDataProperties.swift in Sources */,
 				9769DD491F306D5F00CBE202 /* Module+CoreDataClass.swift in Sources */,
 				97EF30101F29C49700059687 /* LibraryViewController.swift in Sources */,
+				97D41F031F362DFD0028C2E1 /* AboutViewController.swift in Sources */,
 				9769DD3E1F306D5F00CBE202 /* Lesson+CoreDataProperties.swift in Sources */,
 				9735CEB51F2622AA00771566 /* ModuleControlTableViewCell.swift in Sources */,
 				9769DD431F306D5F00CBE202 /* Homework+CoreDataClass.swift in Sources */,
+				97D41F011F3628A00028C2E1 /* UIButtonExtension.swift in Sources */,
 				977D8D0A1F13102D00862493 /* LoginViewController.swift in Sources */,
 				9735CEB11F25F9B700771566 /* ModuleCollectionViewCell.swift in Sources */,
 				9769DD2C1F30596F00CBE202 /* TodoItemProtocol.swift in Sources */,

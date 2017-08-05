@@ -17,8 +17,8 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        decorateButton(logoutButton)
-        decorateButton(aboutButton)
+        logoutButton.decorate()
+        aboutButton.decorate()
         let user = UserService.currentUser!
         if user.gender! == "女" {
             avatarImageView.image = #imageLiteral(resourceName: "girl")
@@ -26,13 +26,15 @@ class UserViewController: UIViewController {
             avatarImageView.image = #imageLiteral(resourceName: "boy")
         }
         nameLabel.text = user.name!
+        
+        navigationController?.navigationBar.tintColor = UIColor.white
+        // 设置导航栏返回按钮文本为“返回”
+        let item = UIBarButtonItem(title: "返回", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item;
     }
-    
-    private func decorateButton(_ button:UIButton) {
-        button.layer.cornerRadius = 8
-        button.layer.borderWidth = 1
-        button.backgroundColor = 0x5677FC.uiColor
-        button.layer.borderColor = UIColor.lightGray.cgColor
+
+    @IBAction func logout(_ sender: UIButton) {
+        
     }
     
 }
