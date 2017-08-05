@@ -64,7 +64,11 @@ public class LibraryService {
     }
     
     private class func removeAllData() {
-        
+        if let books = UserService.currentUser!.books?.allObjects as? [Library] {
+            for book in books {
+                CommonUtil.context.delete(book)
+            }
+        }
     }
 
     private class func loginLibrary() -> Observable<String?> {

@@ -11,5 +11,7 @@ import CoreData
 
 @objc(Lesson)
 public class Lesson: NSManagedObject {
-
+    public static let allWeek: Int16 = 0
+    public static let oddWeek: Int16 = 1
+    public static let evenWeek: Int16 = 2
 }

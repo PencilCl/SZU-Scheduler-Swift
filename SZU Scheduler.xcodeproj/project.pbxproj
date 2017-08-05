@@ -50,6 +50,7 @@
 		97D41EF31F32B5940028C2E1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EF21F32B5940028C2E1 /* StringExtension.swift */; };
 		97D41EF91F345F0E0028C2E1 /* HomeworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EF81F345F0E0028C2E1 /* HomeworkDetailViewController.swift */; };
 		97D41EFB1F355CF10028C2E1 /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EFA1F355CF10028C2E1 /* LibraryService.swift */; };
+		97D41EFD1F3616BD0028C2E1 /* CurriculumScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EFC1F3616BD0028C2E1 /* CurriculumScheduleService.swift */; };
 		97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF71F27945400059687 /* BlackboardViewController.swift */; };
 		97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF91F27A59900059687 /* HomeworkViewController.swift */; };
 		97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */; };
@@ -110,6 +111,7 @@
 		97D41EF21F32B5940028C2E1 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		97D41EF81F345F0E0028C2E1 /* HomeworkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkDetailViewController.swift; sourceTree = "<group>"; };
 		97D41EFA1F355CF10028C2E1 /* LibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
+		97D41EFC1F3616BD0028C2E1 /* CurriculumScheduleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumScheduleService.swift; sourceTree = "<group>"; };
 		97EF2FF71F27945400059687 /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
 		97EF2FF91F27A59900059687 /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
 		97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				9756E6A31F31B1E00063EF72 /* ModuleService.swift */,
 				2C43D2906E36CED3C4D9D2E1 /* BlackboardService.swift */,
 				97D41EFA1F355CF10028C2E1 /* LibraryService.swift */,
+				97D41EFC1F3616BD0028C2E1 /* CurriculumScheduleService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				9769DD3F1F306D5F00CBE202 /* Student+CoreDataClass.swift in Sources */,
 				97EF301A1F29D7B300059687 /* CurriculumScheduleViewController.swift in Sources */,
 				97D41EEF1F3228410028C2E1 /* MsgError.swift in Sources */,
+				97D41EFD1F3616BD0028C2E1 /* CurriculumScheduleService.swift in Sources */,
 				97EF30121F29C4EC00059687 /* BookTableViewCell.swift in Sources */,
 				9769DCE21F2CC76400CBE202 /* UserService.swift in Sources */,
 				97EF30041F27AB4D00059687 /* SubjectTableViewController.swift in Sources */,
