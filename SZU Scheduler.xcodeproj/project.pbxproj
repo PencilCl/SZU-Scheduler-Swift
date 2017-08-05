@@ -49,6 +49,7 @@
 		97D41EF11F32B3670028C2E1 /* RegExUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EF01F32B3670028C2E1 /* RegExUtil.swift */; };
 		97D41EF31F32B5940028C2E1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EF21F32B5940028C2E1 /* StringExtension.swift */; };
 		97D41EF91F345F0E0028C2E1 /* HomeworkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EF81F345F0E0028C2E1 /* HomeworkDetailViewController.swift */; };
+		97D41EFB1F355CF10028C2E1 /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D41EFA1F355CF10028C2E1 /* LibraryService.swift */; };
 		97EF2FF81F27945400059687 /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF71F27945400059687 /* BlackboardViewController.swift */; };
 		97EF2FFA1F27A59900059687 /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FF91F27A59900059687 /* HomeworkViewController.swift */; };
 		97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */; };
@@ -108,6 +109,7 @@
 		97D41EF01F32B3670028C2E1 /* RegExUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegExUtil.swift; sourceTree = "<group>"; };
 		97D41EF21F32B5940028C2E1 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		97D41EF81F345F0E0028C2E1 /* HomeworkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkDetailViewController.swift; sourceTree = "<group>"; };
+		97D41EFA1F355CF10028C2E1 /* LibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
 		97EF2FF71F27945400059687 /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
 		97EF2FF91F27A59900059687 /* HomeworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
 		97EF2FFD1F27A67100059687 /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				9769DCE11F2CC76400CBE202 /* UserService.swift */,
 				9756E6A31F31B1E00063EF72 /* ModuleService.swift */,
 				2C43D2906E36CED3C4D9D2E1 /* BlackboardService.swift */,
+				97D41EFA1F355CF10028C2E1 /* LibraryService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				977D8D0A1F13102D00862493 /* LoginViewController.swift in Sources */,
 				9735CEB11F25F9B700771566 /* ModuleCollectionViewCell.swift in Sources */,
 				9769DD2C1F30596F00CBE202 /* TodoItemProtocol.swift in Sources */,
+				97D41EFB1F355CF10028C2E1 /* LibraryService.swift in Sources */,
 				97EF30181F29D44300059687 /* GobyeViewController.swift in Sources */,
 				97EF301C1F2A392600059687 /* CurriculumScheduleView.swift in Sources */,
 				97EF2FFF1F27A67100059687 /* HomeworkTableViewCell.swift in Sources */,

@@ -23,7 +23,8 @@ class LibraryViewController: UIViewController {
         
         navigationController?.navigationBar.barTintColor = 0xff7043.uiColor
         
-//        bookList = [Library(bookName: "测试书名", startDate: Date(), endDate: Date())]
+        LibraryService.refresh()
+        bookList = UserService.currentUser!.books?.allObjects as? [Library]
     }
 }
 
