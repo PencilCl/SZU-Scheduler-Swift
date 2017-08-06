@@ -34,7 +34,18 @@ class UserViewController: UIViewController {
     }
 
     @IBAction func logout(_ sender: UIButton) {
+        UserService.logout()
         
+        // Come back to login window
+        if let loginCV = storyboard?.instantiateViewController(withIdentifier: "loginView"),
+            let window = UIApplication.shared.delegate?.window,
+            let availableWindow = window {
+            availableWindow.rootViewController = loginCV
+        }
+    }
+    
+    deinit {
+        print("销毁用户界面")
     }
     
 }

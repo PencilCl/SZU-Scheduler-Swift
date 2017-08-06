@@ -36,8 +36,6 @@ class LoginViewController: UIViewController {
                     switch event {
                     case .next(_):
                         if event.element != nil {
-                            BlackboardService.refreshSubject()
-                            CurriculumScheduleService.refresh()
                             self?.performSegue(withIdentifier: "login", sender: nil)
                         } else {
                             self?.present(CommonUtil.getErrorAlertController(message: "获取用户信息失败"), animated: true, completion: nil)
@@ -59,6 +57,10 @@ class LoginViewController: UIViewController {
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return false
+    }
+    
+    deinit {
+        print("销毁登录界面")
     }
     
 }

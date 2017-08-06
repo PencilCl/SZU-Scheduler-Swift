@@ -141,7 +141,6 @@ public class BlackboardService {
                                         let attachmentsMatcher = try! RegExUtil.matchs(pattern: attachmentPattern, from: attachmentsHtml)
 //                                        print(attachmentsHtml)
                                         for attachmentMatcher in attachmentsMatcher {
-                                            print("find attachment")
                                             let attachment = NSEntityDescription.insertNewObject(forEntityName: attachmentEntityName, into: CommonUtil.context) as! Attachment
                                             attachment.attachmentName = attachmentsHtml.substring(with: attachmentMatcher.rangeAt(3))
                                             attachment.attachmentUrl = baseUrl + attachmentsHtml.substring(with: attachmentMatcher.rangeAt(1))
@@ -162,7 +161,6 @@ public class BlackboardService {
     }
     
     private static func getHomeworkOtherInfo(url: String, homework: Homework) {
-        print("get otherinfo" + homework.homeworkName!)
         Alamofire.request(baseUrl + url)
             .responseString { response in
                 if let html = response.result.value {

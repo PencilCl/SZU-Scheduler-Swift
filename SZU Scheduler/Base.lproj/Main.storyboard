@@ -38,7 +38,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginView" id="BYZ-38-t0r" customClass="LoginViewController" customModule="SZU_Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -1129,6 +1129,6 @@
         <image name="boy" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ran-R7-UpW"/>
+        <segue reference="A5Y-Td-ACZ"/>
     </inferredMetricsTieBreakers>
 </document>
