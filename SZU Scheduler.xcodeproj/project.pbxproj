@@ -19,7 +19,6 @@
 		9769DCE61F2EC32D00CBE202 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DCE51F2EC32D00CBE202 /* CommonUtil.swift */; };
 		9769DCEA1F2F8CD300CBE202 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9769DCE91F2F8CD300CBE202 /* CoreData.framework */; };
 		9769DCED1F2F8CF100CBE202 /* SZUScheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9769DCEB1F2F8CF100CBE202 /* SZUScheduler.xcdatamodeld */; };
-		9769DD2C1F30596F00CBE202 /* TodoItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DD2B1F30596F00CBE202 /* TodoItemProtocol.swift */; };
 		9769DD2E1F3064A600CBE202 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DD2D1F3064A600CBE202 /* IntExtension.swift */; };
 		9769DD3D1F306D5F00CBE202 /* Lesson+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DD2F1F306D5F00CBE202 /* Lesson+CoreDataClass.swift */; };
 		9769DD3E1F306D5F00CBE202 /* Lesson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769DD301F306D5F00CBE202 /* Lesson+CoreDataProperties.swift */; };
@@ -79,7 +78,6 @@
 		9769DCE51F2EC32D00CBE202 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		9769DCE91F2F8CD300CBE202 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9769DCEC1F2F8CF100CBE202 /* SZUScheduler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SZUScheduler.xcdatamodel; sourceTree = "<group>"; };
-		9769DD2B1F30596F00CBE202 /* TodoItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemProtocol.swift; sourceTree = "<group>"; };
 		9769DD2D1F3064A600CBE202 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		9769DD2F1F306D5F00CBE202 /* Lesson+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lesson+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9769DD301F306D5F00CBE202 /* Lesson+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lesson+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -175,14 +173,6 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
-		9769DD2A1F30594900CBE202 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				9769DD2B1F30596F00CBE202 /* TodoItemProtocol.swift */,
-			);
-			name = Protocol;
-			sourceTree = "<group>";
-		};
 		977D8CFB1F13102D00862493 = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				977D8D191F1469A000862493 /* Support Files */,
-				9769DD2A1F30594900CBE202 /* Protocol */,
 				9769DCE41F2EC31D00CBE202 /* Util */,
 				97BC092D1F2C6F44009BD3E7 /* Extension */,
 				97BC092C1F2C6F3B009BD3E7 /* Service */,
@@ -488,7 +477,6 @@
 				97D41F011F3628A00028C2E1 /* UIButtonExtension.swift in Sources */,
 				977D8D0A1F13102D00862493 /* LoginViewController.swift in Sources */,
 				9735CEB11F25F9B700771566 /* ModuleCollectionViewCell.swift in Sources */,
-				9769DD2C1F30596F00CBE202 /* TodoItemProtocol.swift in Sources */,
 				97D41EFB1F355CF10028C2E1 /* LibraryService.swift in Sources */,
 				97EF30181F29D44300059687 /* GobyeViewController.swift in Sources */,
 				97EF301C1F2A392600059687 /* CurriculumScheduleView.swift in Sources */,

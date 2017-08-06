@@ -78,9 +78,7 @@ class CurriculumScheduleView: UIView {
     }
     
     private func initHeader() {
-        let days = (Int(Date().timeIntervalSince1970) + NSTimeZone.local.secondsFromGMT()) / 86400 // 24*60*60
-        var weekday = ((days + 4)%7+7)%7
-        weekday = weekday == 0 ? 7 : weekday
+        let weekday = Date().weekDay()
         for i in 0..<7 {
             let label = UILabel()
             label.text = "周" + CurriculumScheduleView.getUpperCaseNum(with: i + 1)
@@ -109,12 +107,6 @@ class CurriculumScheduleView: UIView {
             scrollView.addSubview(label)
         }
         addSubview(scrollView)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        print("layout subviews")
     }
 
     override func draw(_ rect: CGRect) {

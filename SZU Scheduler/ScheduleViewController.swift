@@ -25,17 +25,12 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        selectMonthLabel.text = CVDate(date: Date(), calendar: Calendar.init(identifier: .gregorian)).globalDescription
+        let currentDate = Date()
+        selectMonthLabel.text = CVDate(date: currentDate, calendar: Calendar.init(identifier: .gregorian)).globalDescription
+        refreshTodoList(date: currentDate)
+        
         self.menuView.menuViewDelegate = self
         self.calendarView.calendarDelegate = self
-        
-        todoItemList = [
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述"),
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述"),
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述"),
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述"),
-            TodoItem(timeBegin: "第一节", timeEnd: "第二节", title: "标题", detail: "详细描述")
-        ]
     }
 
     override func viewDidLayoutSubviews() {
@@ -45,6 +40,10 @@ class ScheduleViewController: UIViewController {
         calendarView.commitCalendarViewUpdate()
     }
     
+    func refreshTodoList(date: Date) {
+        todoItemList = BlackboardService.getTodoList(date: date)
+        todoItemList += CurriculumScheduleService.getTodoList(date: date)
+    }
 }
 
 extension ScheduleViewController: CVCalendarMenuViewDelegate, CVCalendarViewDelegate {
@@ -69,7 +68,8 @@ extension ScheduleViewController: CVCalendarMenuViewDelegate, CVCalendarViewDele
     }
     
     func didSelectDayView(_ dayView: DayView, animationDidFinish: Bool) {
-//        let date = dayView.date.convertedDate()!
+        let date = dayView.date.convertedDate()!
+        refreshTodoList(date: date)
     }
 }
 

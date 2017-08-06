@@ -15,3 +15,11 @@ extension NSDate {
         return dateFormatter.string(from: self as Date)
     }
 }
+
+extension Date {
+    func weekDay() -> Int {
+        let days = (Int(self.timeIntervalSince1970) + NSTimeZone.local.secondsFromGMT()) / 86400 // 24*60*60
+        let weekday = ((days + 4)%7+7)%7
+        return weekday == 0 ? 7 : weekday
+    }
+}

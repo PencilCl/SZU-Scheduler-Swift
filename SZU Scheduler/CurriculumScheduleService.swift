@@ -71,6 +71,23 @@ public class CurriculumScheduleService {
         }
     }
     
+    public static func getTodoList(date: Date) -> [TodoItem] {
+        var res = [TodoItem]()
+        let timeTpl = "第%d节"
+        
+        if let lessons = UserService.currentUser!.lessons?.allObjects as? [Lesson] {
+            for lesson in lessons {
+                if Int(lesson.day) == date.weekDay() {
+                    res.append(TodoItem(timeBegin: String.init(format: timeTpl, lesson.begin),
+                                        timeEnd: String.init(format: timeTpl, lesson.end),
+                                        title: lesson.lessonName!, detail: lesson.venue!))
+                }
+            }
+        }
+        
+        return res
+    }
+    
     private class func removeAllData() {
         if let lessons = UserService.currentUser!.lessons?.allObjects as? [Lesson] {
             for lesson in lessons {

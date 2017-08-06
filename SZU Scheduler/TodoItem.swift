@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class TodoItem: NSObject, TodoItemProtocol {
+public class TodoItem: NSObject {
     public var timeBegin: String
     public var timeEnd: String
     public var detail: String

@@ -23,6 +23,36 @@ public class BlackboardService {
     private static let attachmentEntityName = "Attachment"
     private static let homeworkEntityName = "Homework"
     
+    public static func getTodoList(date: Date) -> [TodoItem] {
+        var res = [TodoItem]()
+        
+        if let homeworks = getAllHomework() {
+            for homework in homeworks {
+                if !homework.finished,
+                    homework.deadline != nil,
+                    Calendar.current.isDate(homework.deadline! as Date, inSameDayAs: date) {
+                    res.append(TodoItem(timeBegin: "00:00", timeEnd: homework.deadline!.format(with: "hh:mm"), title: homework.homeworkName!, detail: homework.subject!.subjectName!))
+                }
+            }
+        }
+        
+        return res
+    }
+    
+    public static func getUnfinishedHomeworks() -> [Homework] {
+        var res = [Homework]()
+        
+        if let homeworks = getAllHomework() {
+            for homework in homeworks {
+                if !homework.finished {
+                    res.append(homework)
+                }
+            }
+        }
+        
+        return res
+    }
+    
     public static func refreshSubject() {
         loginBB()
             .subscribe { event in
@@ -38,6 +68,11 @@ public class BlackboardService {
                     break
                 }
         }
+    }
+    
+    private static func getAllHomework() -> [Homework]? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: homeworkEntityName)
+        return try? CommonUtil.context.fetch(request) as! [Homework]
     }
     
     private static func removeAllData() {
