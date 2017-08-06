@@ -47,8 +47,42 @@ class CurriculumScheduleView: UIView {
         label.clipsToBounds = true
         label.layer.cornerRadius = 8
         label.backgroundColor = colorList[abs(lesson.lessonName!.hashValue) % colorList.count].uiColor
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(handleTapGesture(sender:))))
         lessonMap[lesson] = label
         scrollView.addSubview(label)
+    }
+    
+    @objc private func handleTapGesture(sender: UITapGestureRecognizer) {
+        if let clickedLabel = sender.view as? UILabel {
+            for (lesson, label) in lessonMap {
+                if clickedLabel == label {
+                    // Get top vc
+                    var topVC = UIApplication.shared.keyWindow?.rootViewController
+                    while((topVC!.presentedViewController) != nil) {
+                        topVC = topVC!.presentedViewController
+                    }
+                    
+                    let alert = UIAlertController(title: lesson.lessonName!, message: "编辑上课地点", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "保存", style: .default, handler: { action in
+                        if let text = alert.textFields?.first?.text,
+                            !text.isEmpty {
+                            lesson.venue = text
+                            label.text = "\(lesson.lessonName!)\n\(lesson.venue!)"
+                            CommonUtil.app.saveContext()
+                        } else {
+                            topVC?.present(CommonUtil.getErrorAlertController(message: "保存失败!\n上课地点不能为空"), animated: true, completion: nil)
+                        }
+                    }))
+                    alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+                    alert.addTextField(configurationHandler: nil)
+                    alert.textFields?.first?.text = lesson.venue!
+                    
+                    topVC?.present(alert, animated: true, completion: nil)
+                    break
+                }
+            }
+        }
     }
     
     func removeCourse(_ lesson: Lesson) {
