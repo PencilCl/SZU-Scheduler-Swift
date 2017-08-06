@@ -95,20 +95,53 @@ public class UserService {
         return loginOnly(user.username!, user.password!)
     }
     
-    public class func login(username: String, password: String) -> Observable<Student?> {
+    public class func login(username: String, password: String) -> Observable<Student> {
         // Logout all website before login
         return Observable<Void>.zip(logoutBB(), logoutLibrary()) { (res1, res2) in
             return
         }.flatMap { _ -> Observable<Void> in
             return loginOnly(username, password)
-        }.flatMap { (_) -> Observable<Student?> in
+        }.flatMap { (_) -> Observable<Student> in
             getUserInfo(username: username, password: password)
         }
     }
     
     // Getting student number、name and gender
     // Note: Need ensuring login
-    public class func getUserInfo(username: String, password: String) -> Observable<Student?> {
+    public class func getUserInfo(username: String, password: String) -> Observable<Student> {
+        return getStuNum().flatMap { stuNum -> Observable<[String: String]> in
+            return getNameAndGender(stuNum: stuNum)
+        }.map { userInfo -> Student in
+            // If the current user has logged on
+            // the account is not created repeatedly
+            // and the user data is updated directly
+            var user: Student
+            var newUser = false
+            if let findUser = findByUsername(username) {
+                user = findUser
+            } else {
+                user = create()
+                newUser = true
+            }
+            user.username = username
+            user.password = password
+            user.stuNum = userInfo["stuNum"]
+            user.name = userInfo["name"]
+            user.gender = userInfo["gender"]
+            
+            currentUser = user
+            
+            // If first login, then initializing data
+            if newUser {
+                BlackboardService.refreshSubject()
+                CurriculumScheduleService.refresh()
+            }
+            saveCurrentUserInfo()
+            return user
+        }
+    }
+    
+    private class func getStuNum() -> Observable<String> {
         return Observable<String>.create { observer -> Disposable in
             Alamofire.request(stuNumUrl)
                 .responseString { response in
@@ -128,54 +161,36 @@ public class UserService {
                     }
             }
             return Disposables.create { }
-        }.flatMap { stuNum -> Observable<Student?> in
-            Observable<Student?>.create { observer -> Disposable in
-                Alamofire.request(stuInfoUrl + stuNum)
-                    .responseJSON { response in
-                        switch response.result {
-                        case .success(_):
-                            if let json = response.result.value as? [String: AnyObject],
-                                let code = json["code"] as? Int,
-                                code == 10000,
-                                let data = json["data"] as? [String: AnyObject],
-                                let name = data["name"] as? String,
-                                let gender = data["sex"] as? String {
-                                
-                                // If the current user has logged on
-                                // the account is not created repeatedly
-                                // and the user data is updated directly
-                                var user: Student
-                                var newUser = false
-                                if let findUser = findByUsername(username) {
-                                    user = findUser
-                                } else {
-                                    user = create()
-                                    newUser = true
-                                }
-                                user.username = username
-                                user.password = password
-                                user.stuNum = stuNum
-                                user.name = name
-                                user.gender = gender
-                                
-                                currentUser = user
-                                
-                                // If first login, then initializing data
-                                if newUser {
-                                    BlackboardService.refreshSubject()
-                                    CurriculumScheduleService.refresh()
-                                }
-                                saveCurrentUserInfo()
-                                observer.onNext(user)
-                            } else {
-                                observer.onError(MsgError("获取学生信息失败"))
-                            }
-                        case .failure(_):
-                            observer.onError(MsgError("请求获取学生信息失败"))
+        }
+    }
+    
+    private class func getNameAndGender(stuNum: String) -> Observable<[String: String]> {
+        return Observable<[String: String]>.create { observer -> Disposable in
+            Alamofire.request(stuInfoUrl + stuNum)
+                .responseJSON { response in
+                    switch response.result {
+                    case .success(_):
+                        if let json = response.result.value as? [String: AnyObject],
+                            let code = json["code"] as? Int,
+                            code == 10000,
+                            let data = json["data"] as? [String: AnyObject],
+                            let name = data["name"] as? String,
+                            let gender = data["sex"] as? String {
+                            
+                            observer.onNext([
+                                "name": name,
+                                "gender": gender,
+                                "stuNum": stuNum
+                            ])
+                            
+                        } else {
+                            observer.onError(MsgError("获取学生信息失败"))
                         }
-                }
-                return Disposables.create { }
+                    case .failure(_):
+                        observer.onError(MsgError("请求获取学生信息失败"))
+                    }
             }
+            return Disposables.create { }
         }
     }
     
