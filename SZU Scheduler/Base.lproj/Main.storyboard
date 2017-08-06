@@ -172,13 +172,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fpm-gf-yyY">
                                                     <rect key="frame" x="18" y="17" width="40" height="40"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一节" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nc2-eX-aXM">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一节" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nc2-eX-aXM">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第二节" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGz-zs-GMd">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第二节" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGz-zs-GMd">
                                                             <rect key="frame" x="0.0" y="24" width="40" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
@@ -190,16 +190,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="6pL-Qb-vfg">
-                                                    <rect key="frame" x="75" y="15" width="61.5" height="44"/>
+                                                    <rect key="frame" x="75" y="15" width="284" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYk-1e-4S9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="61.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="284" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详细描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92q-Io-4me">
-                                                            <rect key="frame" x="0.0" y="23.5" width="61.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="23.5" width="284" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -214,6 +214,7 @@
                                                 <constraint firstItem="Fpm-gf-yyY" firstAttribute="leading" secondItem="gke-YP-fXN" secondAttribute="leadingMargin" constant="10" id="MFe-Pr-xay"/>
                                                 <constraint firstItem="6pL-Qb-vfg" firstAttribute="top" secondItem="gke-YP-fXN" secondAttribute="topMargin" constant="7" id="NdR-cT-xHe"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="3hY-ar-uHw" secondAttribute="bottom" constant="11.5" id="YLg-BU-i4R"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SYk-1e-4S9" secondAttribute="trailing" constant="8" id="cRT-8L-TMf"/>
                                                 <constraint firstItem="Fpm-gf-yyY" firstAttribute="centerY" secondItem="gke-YP-fXN" secondAttribute="centerY" id="q3U-RJ-IGz"/>
                                                 <constraint firstItem="6pL-Qb-vfg" firstAttribute="leading" secondItem="3hY-ar-uHw" secondAttribute="trailing" constant="8" symbolic="YES" id="sp7-jp-cyU"/>
                                                 <constraint firstItem="3hY-ar-uHw" firstAttribute="top" secondItem="gke-YP-fXN" secondAttribute="topMargin" constant="15" id="wzp-aC-onE"/>
